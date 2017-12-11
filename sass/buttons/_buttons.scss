@@ -1,0 +1,33 @@
+.btn {
+	transition: all 0.3s;
+	font-size: 0.77rem;
+	text-transform: uppercase;
+}
+
+// colors
+
+.btn-success {
+	background-color: #e94f1b;
+	border: 1px solid #e94f1b;
+	color: #fff;
+
+	&:hover,
+	&:focus,
+	&:active,
+	&:focus:active,
+	&:active:hover {
+		background-color: #e13900;
+		border: 1px solid #e94f1b;
+		color: #fff;
+		outline: none;
+	}
+}
+
+
+
+// sizes
+
+.btn-sm {
+	padding: 12px 20px;
+	border-radius: 6px;
+}

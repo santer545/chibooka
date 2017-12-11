@@ -1,0 +1,41 @@
+html {
+	font-size: 13px;
+	@include mini-laptop {
+		font-size: 12px;
+	}
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	font: 400 1rem / 1.4 'Open Sans', sans-serif;
+	background-color: #fff;
+	color: #522a6b;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	color: #522a6b;
+}
+
+.wrapper {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+	height: 100%;
+	overflow: hidden;
+	min-width: 320px;
+}
+
+.container-fluid {
+	max-width: 1170px;
+	margin: 0 auto;
+}
+

@@ -1,0 +1,109 @@
+.footer {
+    display: table-footer-group;
+    &-top {
+        padding: 53px 0 44px;
+        background-color: #522a6b;
+        color: #fff;
+        @include tablet {
+        	padding: 30px 0;
+        }
+        @include mobile {
+        	text-align: center;
+        }
+    }
+    &-logo {
+    	display: block;
+    	@include mobile {
+    		text-align: center;
+    		padding-bottom: 30px;
+    	}
+    }
+    &-menu {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        @include mobile {
+        	margin-bottom: 30px;
+        }
+        li {
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+            a {
+                font-size: 12px;
+                font-weight: 500;
+                color: #fff;
+            }
+        }
+    }
+    &-bottom {
+        padding: 25px 0;
+        background-color: #f7f8f7;
+        @include tablet {
+        	padding: 0 0 10px;
+        }
+        @include mobile {
+        	text-align: center;
+        }
+        a {
+            font-weight: 600;
+            color: #e94f1b;
+        }
+    }
+    &-info {
+        text-align: right;
+        @include mobile {
+        	text-align: center;
+        	padding-top: 10px;
+        }
+    }
+    &-subscribe {
+    	@include tablet {
+    		padding-top: 30px;
+    		clear: both;
+    	}
+    	@include mobile {
+    		padding-top: 0;
+    	}
+        .btn-sm {
+            width: 100%;
+        }
+        .form-control {
+            font-size: 0.92rem;
+            color: #272727;
+            &::-webkit-input-placeholder {
+                /* Chrome/Opera/Safari */
+                color: #272727;
+            }
+            &::-moz-placeholder {
+                /* Firefox 19+ */
+                color: #272727;
+            }
+            &:-ms-input-placeholder {
+                /* IE 10+ */
+                color: #272727;
+            }
+        }
+        .form-group {
+        	@include tablet {
+        		margin-bottom: 0;
+        	}
+        	&:first-child {
+        		margin-bottom: 20px;
+        		@include mini-laptop {
+        			margin-bottom: 10px;	
+        		}
+        		@include tablet {
+        			margin-bottom: 0;
+        		}
+        	}
+        }
+    }
+}
+
+.copyright {
+	@include tablet {
+		padding: 10px 0;
+		text-align: center;
+	}
+}

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chibooka</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=cyrillic-ext" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2 col-xs-3">
+                        <a href="#" class="header-logo">
+                            <img src="images/logo.png" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-10 col-xs-9">
+                        <nav class="navbar">
+                            <div id="js-hamburger" class="hamburger-btn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="location"><span><i class="fa fa-map-marker" aria-hidden="true"></i></span>Харьков</div>
+                            <div class="mobile-navbar js-navbar">
+                                <ul>
+                                    <li><a href="#">Заведения</a></li>
+                                    <li><a href="#">Предложения</a></li>
+                                    <li><a href="#">О нас</a></li>
+                                    <li><a href="#">Рестораторам</a></li>
+                                    <li><a href="#">Блог</a></li>
+                                    <li><a href="#">Контакты</a></li>
+                                    <li><a href="#">F.A.Q</a></li>
+                                </ul>
+                                <div class="header-right">
+                                    <a href="#" class="lang">
+                                        <img src="images/lang-1.jpg" alt="">
+                                    </a>
+                                    <a class="authorize hidden" data-toggle="modal" data-target="#authorize" role="button">
+                                        Вход / регистрация
+                                    </a>
+                                    <div class="toolbar">
+                                        <div class="like">
+                                            <div class="like-count">46</div>
+                                            <i class="fa fa-heart" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="bell">
+                                            <i class="fa fa-bell" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="user">
+                                            <i class="fa fa-user" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+	<div class="banner" style="background-image: url(images/header-bg.jpg)">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+					
+				</div>
+				<div class="col-md-10">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+<footer class="footer">
+    <div class="footer-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 col-md-2 col-lg-3">
+                    <a href="#" class="footer-logo">
+							<img src="images/footer-logo.png" alt="">
+						</a>
+                </div>
+                <div class="col-md-2 col-sm-3">
+                    <ul class="footer-menu">
+                        <li><a href="#">Заведения</a></li>
+                        <li><a href="">О нас</a></li>
+                        <li><a href="">Рестораторам</a></li>
+                        <li><a href="">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <ul class="footer-menu">
+                        <li><a href="#">Вход</a></li>
+                        <li><a href="#">Регистрация</a></li>
+                        <li><a href="#">Вход для рестораторов</a></li>
+                        <li><a href="#">Пользовательское соглашение</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-3">
+                    <ul class="footer-menu">
+                        <li>Контакты</li>
+                        <li><a href="tel:380987456321">+38 098 745 63 21</a></li>
+                        <li><a href="tel:380987456321">+38 098 745 63 21</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3">
+                    <div class="footer-subscribe">
+                        <form action="" class="form js_validate">
+                            <div class="form-group">
+                                <input type="email" class="form-control" data-validate="email" required placeholder="email">
+                                <span class="error-text error-text--inverse">Введите email</span>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-success btn-sm" type="submit">Подписаться</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-5 col-md-4 copyright">
+                    <i class="fa fa-copyright" aria-hidden="true"></i> 2017 Chibooka
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-6">Дизайн сайта разработан в <a href="http://gladhead.com/" target="_blank">дизайн-студии Glad Head</a></div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-info">
+                        Программирование сайта <a href="https://artjoker.ua/ua/" target="_blank">Artjoker</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="authorize" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs modal-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#auth" aria-controls="home" role="tab" data-toggle="tab">Авторизация</a></li>
+                    <li role="presentation"><a href="#registration" aria-controls="profile" role="tab" data-toggle="tab">Регистрация</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content modal-tab__content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="auth">
+                        <form action="" class="form js_validate">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" required data-validate="email" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" required data-validate="pass" placeholder="Пароль">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="social-authorize">
+                                        <p>Войти при помощи:</p>
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                            				<i class="fa fa-google-plus" aria-hidden="true"></i>
+                            			</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                            				<i class="fa fa-facebook" aria-hidden="true"></i>
+                            			</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="remember" class="custom-checkbox">
+                                            <input type="checkbox" id="remember">
+                                            <span class="fake-checkbox"></span>
+                                            <span>Запомнить меня</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <button class="btn btn-success btn-sm" type="submit">войти</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="registration">
+                        <form action="" class="form js_validate">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" required placeholder="Ваше имя">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" required placeholder="Ваша почта">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" required data-validate="email" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="tel" class="form-control" required data-validate="phone" placeholder="Телефон">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" required data-validate="pass" placeholder="Пароль">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" required data-validate="pass1" placeholder="Повторите пароль">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="social-authorize">
+                                            <p>Зарегестрироваться при помощи:</p>
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                    	                                	                 <i class="fa fa-google-plus" aria-hidden="true"></i>
+                                    	                                	            </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                    	                                	                 <i class="fa fa-facebook" aria-hidden="true"></i>
+                                    	                                	            </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="remember-1" class="custom-checkbox custom-checkbox--inverse">
+                                        <input type="checkbox" id="remember-1">
+                                        <span class="fake-checkbox"></span>
+                                        <span>  Подписаться на рассылку о специальных предложениях</span>
+                                    </label>
+                                    <label for="remember-2" class="custom-checkbox custom-checkbox--inverse">
+                                        <input type="checkbox" id="remember-2">
+                                        <span class="fake-checkbox"></span>
+                                        <span>Запомнить меня</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <button class="btn btn-success btn-sm" type="submit">создать аккаунт</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <div class="rools">
+                                            При регистрации аккаунта вы соглашаетесь с <a href="#">условиями 
+                                        		пользования сервисом и политикой конфиденциальности</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/all.min.js"></script>
+</body>
+
+</html>
