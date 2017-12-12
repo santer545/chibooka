@@ -1,0 +1,18 @@
+.cabinet {
+    &-form {
+        padding-top: 35px;
+        padding-bottom: 40px;
+        padding-right: 15%;
+
+        .form-control {
+            height: 40px;
+        }
+    }
+    &-img {
+    	margin-top: -53%;
+    	img {
+    		border-radius: 5px;
+    	}
+    }
+}
+

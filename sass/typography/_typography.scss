@@ -1,6 +1,14 @@
 .heading-h1 {
 	font-size: 3.84rem;
-	padding: 10% 0px;
+	padding: 12% 0px 12.5%;
 	color: #fff;
 	font-weight: 700;
+	@include tablet {
+		font-size: 3rem;
+		padding: 3% 0;
+	}
+
+	&--bottom {
+		padding: 22% 0 15px;
+	}
 }

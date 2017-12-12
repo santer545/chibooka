@@ -12,22 +12,28 @@
         right: 0;
         background-color: rgba(0, 0, 0, 0.25);
     }
+    @include mini-laptop {
+        padding-top: 48px;
+    }
     @include tablet {
-        padding-top: 0;
+        padding-top: 46px;
     }
     &-menu {
         position: relative;
         list-style-type: none;
-        padding: 0 60px 0 0;
+        padding: 0 56px 0 15px;
         margin: 0;
         background-color: #522a6b;
         display: inline-block;
         vertical-align: middle;
         border-radius: 0 5px 5px 0;
+        @include tablet {
+            padding-right: 15px;
+        }
         &:after {
             content: '';
             position: absolute;
-            right: 100%;
+            right: calc(100% - 1px);
             top: 0;
             bottom: 0;
             width: 9999px;
@@ -37,19 +43,20 @@
         li {
             display: inline-block;
             vertical-align: middle;
-            @include tablet {
+            @include mobile-portret {
                 display: block;
             }
             &:not(:last-child) {
-                padding-right: 15px;
+                padding-right: 14px;
                 @include mini-laptop {
                     padding-right: 8px;
                 }
             }
-            a {
+            a,
+            span {
                 position: relative;
                 display: block;
-                padding: 25px 0;
+                padding: 26px 0;
                 font-size: 1rem;
                 color: #fff;
                 font-weight: 600;
@@ -79,15 +86,30 @@
                     }
                 }
             }
+            &.active {
+                a,
+                span {
+                    text-decoration: none;
+                    &:before {
+                        transform: scale(1);
+                    }
+                }
+            }
         }
     }
     &-like {
     	position: relative;
     	z-index: 1;
-    	margin-right: 60px;
-    	font-size: 20px;
+    	margin-right: 53px;
+    	font-size: 27px;
     	display: inline-block;
     	vertical-align: middle;
     	color: #fff;
+        @include mini-laptop {
+            margin-right: 10px;
+        }
+        @include tablet {
+            font-size: 17px;
+        }
     }
 }

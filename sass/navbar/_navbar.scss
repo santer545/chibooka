@@ -5,22 +5,22 @@
     min-height: 0;
     border: none;
     font-size: 0;
-    border-radius: 5px 0 0 5px;
+    border-radius: 8px 0 0 8px;
     @include tablet {
         border-radius: 0;
         @include clearfix;
-        padding-right: 45px;	
+        padding-right: 45px;
     }
     &:after {
         content: '';
         position: absolute;
-        left: 100%;
+        left: calc(100% - 1px);
         width: 9999px;
         top: 0;
         bottom: 0;
         background-color: #522a6b;
         height: 68px;
-        transition: height 0.3s;
+        transition: all 0.3s;
         @include mini-laptop {
             height: 46px;
         }
@@ -54,12 +54,13 @@
                 display: block;
             }
             &:not(:last-child) {
-                padding-right: 15px;
+                padding-right: 17px;
                 @include mini-laptop {
                     padding-right: 8px;
                 }
             }
-            a {
+            a,
+            span {
                 position: relative;
                 display: block;
                 padding: 25px 0;
@@ -93,12 +94,21 @@
                     }
                 }
             }
+            &.active {
+                a,
+                span {
+                    text-decoration: none;
+                    &:before {
+                        transform: scale(1);
+                    }
+                }
+            }
         }
     }
     .location {
         display: inline-block;
         vertical-align: middle;
-        padding: 25px 45px;
+        padding: 24px 46px;
         color: #fff;
         font-size: 1rem;
         font-weight: 600;
@@ -112,10 +122,10 @@
             display: block;
         }
         @include tablet {
-            float: right;	
+            float: right;
             width: auto;
             padding: 15px 8px;
-            border-radius: 0;	
+            border-radius: 0;
         }
         span {
             margin-right: 10px;
@@ -128,13 +138,13 @@
     display: inline-block;
     vertical-align: middle;
     @include mini-laptop {
-    	width: 86%;	
+        width: 86%;
     }
     @include tablet {
         right: 0;
         top: 0;
         position: fixed;
-        width: 60%;
+        width: 300px;
         height: 100vh;
         background-color: #e94f1b;
         z-index: 1;
@@ -142,25 +152,27 @@
         transform: translate(100%, 0);
         transition: all 0.3s;
         &.open {
-        	transform: translate(0, 0);
+            transform: translate(0, 0);
         }
     }
 }
 
 
 .hamburger-btn {
-	display: none;	
+    display: none;
     width: 30px;
     height: 25px;
-    position: fixed;	
-    top: 13px;	
-    right: 15px;	
+    position: fixed;
+    top: 13px;
+    right: 15px;
     transform: rotate(0deg);
     transition: .5s ease-in-out;
     cursor: pointer;
-    z-index: 2;	
+    z-index: 2;
     @include tablet {
-    	display: block;	
+        display: block;
+        position: absolute;
+        right: 0;
     }
     span {
         display: block;
@@ -207,36 +219,48 @@
 }
 
 .toolbar {
-	display: inline-block;	
-	vertical-align: middle;	
-	font-size: 1.4rem;	
-	color: #fff;
-	.like {
-		position: relative;	
-		@include mini-laptop {
-			margin-left: 20px;	
-		}
-		margin-right: 20px;	
-		&-count {
-			position: absolute;	
-			width: 18px;	
-			height: 18px;
-			line-height: 18px;	
-			border-radius: 18px;
-			text-align: center;
-			padding: 0 3px;	
-			top: -5px;	
-			right: -11px;	
-			font-size: 0.77rem;	
-			background-color: #ee4d14;
-		}
-	}
-	.bell {
-		margin-right: 20px;	
-	}
-	div {
-		display: inline-block;	
-		vertical-align: middle;	
-		cursor: pointer;
-	}
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.5rem;
+    color: #fff;
+    padding-left: 15px;
+    margin-top: -1px;
+    transition: all 0.3s;
+    @include mini-laptop {
+        padding-top: 10px;
+        padding-left: 0;
+    }
+    .like {
+        position: relative;
+        @include mini-laptop {
+            margin-left: 15px;
+        }
+        margin-right: 25px;
+        &-count {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            line-height: 18px;
+            border-radius: 18px;
+            text-align: center;
+            padding: 0 3px;
+            top: -3px;
+            right: -9px;
+            font-size: 0.77rem;
+            background-color: #ee4d14;
+        }
+    }
+    .bell {
+        margin-right: 27px;
+    }
+    div {
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+        transform: scale(1);
+        transition: transform 0.3s;
+        &:hover {
+            transform: scale(0.9);
+        }
+    }
 }

@@ -1,7 +1,7 @@
 .footer {
     display: table-footer-group;
     &-top {
-        padding: 53px 0 44px;
+        padding: 53px 0 30px;
         background-color: #522a6b;
         color: #fff;
         @include tablet {
@@ -12,6 +12,7 @@
         }
     }
     &-logo {
+        padding-left: 6px;   
     	display: block;
     	@include mobile {
     		text-align: center;
@@ -26,8 +27,9 @@
         	margin-bottom: 30px;
         }
         li {
+            line-height: 1.2;   
             &:not(:last-child) {
-                margin-bottom: 10px;
+                margin-bottom: 6px;
             }
             a {
                 font-size: 12px;
@@ -67,6 +69,7 @@
     	}
         .btn-sm {
             width: 100%;
+            padding: 9px 20px;  
         }
         .form-control {
             font-size: 0.92rem;
@@ -89,14 +92,37 @@
         		margin-bottom: 0;
         	}
         	&:first-child {
-        		margin-bottom: 20px;
+        		margin-bottom: 11px;
         		@include mini-laptop {
         			margin-bottom: 10px;	
         		}
         		@include tablet {
         			margin-bottom: 0;
         		}
+                @include mobile {
+                    margin-bottom: 10px;
+                }
         	}
+        }
+    }
+    &-social {
+        list-style-type: none;
+        padding: 16px 0 0 1px; 
+        margin: 0; 
+        @include tablet {
+            padding: 0 0 30px;
+        }
+        li {
+            display: inline-block;  
+            vertical-align: middle; 
+            &:not(:last-child) {
+                margin-right: 27px; 
+            }
+            a {
+                display: block; 
+                color: #fff;
+                font-size: 1rem;    
+            }
         }
     }
 }

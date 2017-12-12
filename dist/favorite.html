@@ -42,10 +42,10 @@
                                     <a href="#" class="lang">
                                         <img src="images/lang-1.jpg" alt="">
                                     </a>
-                                    <a class="authorize hidden" data-toggle="modal" data-target="#authorize" role="button">
+                                    <a class="authorize" data-toggle="modal" data-target="#authorize" role="button">
                                         Вход / регистрация
                                     </a>
-                                    <div class="toolbar">
+                                    <div class="toolbar hidden">
                                         <div class="like">
                                             <div class="like-count">46</div>
                                             <i class="fa fa-heart" aria-hidden="true"></i>
@@ -93,7 +93,7 @@
     <div class="container-fluid">
         <div class="catalog-list">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-4">
                     <div class="catalog-item">
                         <div class="catalog-img">
                             <img src="images/favorite-1.jpg" alt="">
@@ -133,7 +133,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-sm-4">
                     <div class="catalog-item">
                         <div class="catalog-img">
                             <img src="images/favorite-2.jpg" alt="">
@@ -173,7 +173,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-sm-4">
                     <div class="catalog-item">
                         <div class="catalog-img">
                             <img src="images/favorite-3.jpg" alt="">
@@ -223,8 +223,8 @@
             <div class="row">
                 <div class="col-sm-3 col-md-2 col-lg-3">
                     <a href="#" class="footer-logo">
-							<img src="images/footer-logo.png" alt="">
-						</a>
+                            <img src="images/footer-logo.png" alt="">
+                        </a>
                 </div>
                 <div class="col-md-2 col-sm-3">
                     <ul class="footer-menu">
@@ -249,10 +249,15 @@
                         <li><a href="tel:380987456321">+38 098 745 63 21</a></li>
                         <li><a href="tel:380987456321">+38 098 745 63 21</a></li>
                     </ul>
+                    <ul class="footer-social">
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    </ul>
                 </div>
                 <div class="col-lg-2 col-md-3">
                     <div class="footer-subscribe">
-                        <form action="" class="form js_validate">
+                        <form action="#" class="form js_validate">
                             <div class="form-group">
                                 <input type="email" class="form-control" data-validate="email" required placeholder="email">
                                 <span class="error-text error-text--inverse">Введите email</span>
@@ -284,28 +289,30 @@
 </footer>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="authorize" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="authorize" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div>
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs modal-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#auth" aria-controls="home" role="tab" data-toggle="tab">Авторизация</a></li>
-                    <li role="presentation"><a href="#registration" aria-controls="profile" role="tab" data-toggle="tab">Регистрация</a></li>
+                    <li role="presentation" class="active"><a href="#auth" aria-controls="auth" role="tab" data-toggle="tab">Авторизация</a></li>
+                    <li role="presentation"><a href="#registration" aria-controls="registration" role="tab" data-toggle="tab">Регистрация</a></li>
                 </ul>
                 <!-- Tab panes -->
                 <div class="tab-content modal-tab__content">
                     <div role="tabpanel" class="tab-pane fade in active" id="auth">
-                        <form action="" class="form js_validate">
+                        <form action="#" class="form js_validate">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="email" class="form-control" required data-validate="email" placeholder="Email">
+                                        <span class="error-text">Введите email</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="password" class="form-control" required data-validate="pass" placeholder="Пароль">
+                                        <span class="error-text">Введите пароль</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -314,13 +321,13 @@
                                         <ul>
                                             <li>
                                                 <a href="#">
-                            				<i class="fa fa-google-plus" aria-hidden="true"></i>
-                            			</a>
+                                            <i class="fa fa-google-plus" aria-hidden="true"></i>
+                                        </a>
                                             </li>
                                             <li>
                                                 <a href="#">
-                            				<i class="fa fa-facebook" aria-hidden="true"></i>
-                            			</a>
+                                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                                        </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -345,16 +352,18 @@
                         </form>
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="registration">
-                        <form action="" class="form js_validate">
+                        <form action="#" class="form js_validate">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="text" class="form-control" required placeholder="Ваше имя">
+                                        <span class="error-text">Введите Ваше имя</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="text" class="form-control" required placeholder="Ваша почта">
+                                        <span class="error-text">Введите Вашу почту</span>
                                     </div>
                                 </div>
                             </div>
@@ -362,11 +371,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="email" class="form-control" required data-validate="email" placeholder="Email">
+                                        <span class="error-text">Введите Ваш email</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="tel" class="form-control" required data-validate="phone" placeholder="Телефон">
+                                        <span class="error-text">Введите Ваш телефон</span>
                                     </div>
                                 </div>
                             </div>
@@ -374,11 +385,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="password" class="form-control" required data-validate="pass" placeholder="Пароль">
+                                        <span class="error-text">Введите Ваш пароль</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="password" class="form-control" required data-validate="pass1" placeholder="Повторите пароль">
+                                        <span class="error-text">Повторите Ваш пароль</span>
                                     </div>
                                 </div>
                             </div>
@@ -390,26 +403,26 @@
                                             <ul>
                                                 <li>
                                                     <a href="#">
-                                    	                                	                 <i class="fa fa-google-plus" aria-hidden="true"></i>
-                                    	                                	            </a>
+                                                                                             <i class="fa fa-google-plus" aria-hidden="true"></i>
+                                                                                        </a>
                                                 </li>
                                                 <li>
                                                     <a href="#">
-                                    	                                	                 <i class="fa fa-facebook" aria-hidden="true"></i>
-                                    	                                	            </a>
+                                                                                             <i class="fa fa-facebook" aria-hidden="true"></i>
+                                                                                        </a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="remember-1" class="custom-checkbox custom-checkbox--inverse">
-                                        <input type="checkbox" id="remember-1">
+                                    <label for="remember-111" class="custom-checkbox custom-checkbox--inverse">
+                                        <input type="checkbox" id="remember-111">
                                         <span class="fake-checkbox"></span>
                                         <span>  Подписаться на рассылку о специальных предложениях</span>
                                     </label>
-                                    <label for="remember-2" class="custom-checkbox custom-checkbox--inverse">
-                                        <input type="checkbox" id="remember-2">
+                                    <label for="remember-222" class="custom-checkbox custom-checkbox--inverse">
+                                        <input type="checkbox" id="remember-222">
                                         <span class="fake-checkbox"></span>
                                         <span>Запомнить меня</span>
                                     </label>
@@ -427,7 +440,7 @@
                                     <div class="form-group">
                                         <div class="rools">
                                             При регистрации аккаунта вы соглашаетесь с <a href="#">условиями 
-                                        		пользования сервисом и политикой конфиденциальности</a>
+                                                пользования сервисом и политикой конфиденциальности</a>
                                         </div>
                                     </div>
                                 </div>
@@ -435,6 +448,88 @@
                         </form>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="restorator" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog--big" role="document">
+        <div class="modal-header">
+            <h4 class="modal-title"><i class="fa fa-user" aria-hidden="true"></i> Вход для ресторатора</h4>
+            <p>Vim diam prompta laoreet ut, eripuit noluisse ius ei. His inani utroque omittantur an. Te vel vero mandamus, ne sea hinc minim theophrastus. Ei audire tacimates omittantur vis. Te minimum democritum elaboraret eam, ex vel esse utamur consequuntur.</p>
+        </div>
+        <div class="modal-content">
+            <div class="modal-body">
+                <form action="#" class="form js_validate">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="email" class="form-control" required data-validate="email" placeholder="Email">
+                                <span class="error-text">Введите Ваш email</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="tel" class="form-control" required data-validate="phone" placeholder="Телефон">
+                                <span class="error-text">Введите Ваш телефон</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="remember333" class="custom-checkbox custom-checkbox--inverse">
+                                    <input type="checkbox" id="remember333">
+                                    <span class="fake-checkbox"></span>
+                                    <span>Запомнить меня</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <button class="btn btn-success btn-sm" type="submit">войти</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body__bottom">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="modal-bottom__heading">Хотите получить доступ к кабинету ресторатора и зарабатывать с RestoBooking?</div>
+                        <p>Оставьте контактные данные и мы с Вами свяжемся.</p>
+                    </div>
+                </div>
+                <form action="#" class="form js_validate">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" required placeholder="Имя">
+                                <span class="error-text">Введите Ваше имя</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" required placeholder="Фамилия">
+                                <span class="error-text">Введите Вашу фамилию</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="tel" class="form-control" required data-validate="phone" placeholder="Телефон">
+                                <span class="error-text">Введите Ваш телефон</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <button class="btn btn-success btn-sm" type="submit">Оставить заявку</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

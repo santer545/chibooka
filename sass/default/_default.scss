@@ -23,6 +23,11 @@ img {
 
 a {
 	color: #522a6b;
+	&:hover,
+	&:focus,
+	&:active {
+		color: #522a6b;
+	}
 }
 
 .wrapper {

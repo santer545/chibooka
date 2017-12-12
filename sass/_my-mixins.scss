@@ -1,3 +1,4 @@
+$screen-mobile-portret: 600px;
 
 // media points
 
@@ -22,6 +23,12 @@
 
 @mixin mobile {
 	@media screen and (max-width: $screen-xs-max) {
+		@content;
+	}
+}
+
+@mixin mobile-portret {
+	@media screen and (max-width: $screen-mobile-portret) {
 		@content;
 	}
 }

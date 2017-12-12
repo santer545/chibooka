@@ -1,6 +1,6 @@
 .form {
     &-control {
-        line-height: 34px;
+        padding-top: 5px;
         padding-left: 17px;
         padding-right: 17px;
         border: 1px solid #f0f1f0;
@@ -38,6 +38,17 @@
             	margin-bottom: 15px;
             }
         }
+        &--relative {
+            position: relative;
+            .btn {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            .form-control {
+                width: calc(100% - 100px);
+            }
+        }
     }
 }
 
@@ -49,11 +60,12 @@
     cursor: pointer;
     margin-bottom: 5px;
     display: block;
-    padding-left: 20px;
+    padding-left: 18px;
+    
     .fake-checkbox {
     	position: absolute;
     	left: 0;
-    	top: 4px;
+    	top: 3px;
         display: inline-block;
         width: 10px;
         height: 10px;
@@ -88,6 +100,7 @@
     }
     &--inverse {
     	margin-bottom: 10px;
+        
         color: #522a6b;
         @include tablet {
         	margin-bottom: 15px;
@@ -126,6 +139,12 @@
 		}
 	}
 	.form-control {
+        box-shadow: none;
+        border: 1px solid #ff0000;
+        &:focus {
+            box-shadow: none;
+            border: 1px solid #ff0000;
+        }
 		&::-webkit-input-placeholder {
             /* Chrome/Opera/Safari */
             color: #ff0000;
