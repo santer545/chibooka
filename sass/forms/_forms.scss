@@ -50,6 +50,12 @@
             }
         }
     }
+    &-label {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #522a6b;
+        margin-bottom: 15px;
+    }
 }
 
 .custom-checkbox {
@@ -115,6 +121,38 @@
                         background-color: #522a6b;
                     }
                 }
+            }
+        }
+    }
+}
+
+
+.custom-radio {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+    .fake-radio {
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        border: 1px solid #522a6b;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+    span {
+        font-family: Helvetica;
+        font-size: 1rem;
+        color: #522a6b;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    input[type="radio"] {
+        display: none;
+        &:checked {
+            & + .fake-radio {
+                background-color: #522a6b;
             }
         }
     }

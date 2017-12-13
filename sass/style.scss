@@ -1,5 +1,6 @@
 @import 'plugins/bootstrap/_bootstrap.scss';
 @import 'plugins/font-awesome/font-awesome.scss';
+@import 'plugins/bootstrap-select/bootstrap-select.scss';
 
 @import '_my-mixins.scss';
 @import 'default/_default.scss';
@@ -13,3 +14,4 @@
 @import 'typography/_typography.scss';
 @import 'catalog/_catalog.scss';
 @import 'cabinet/_cabinet.scss';
+@import 'search/_search.scss';
