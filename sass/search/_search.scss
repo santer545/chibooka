@@ -3,23 +3,51 @@
         font-size: 2.07rem;
         color: #fff;
         padding: 5% 0px 12px;
+        @include tablet {
+            padding-left: 20px;
+        }
     }
 
     &-holder {
         @include clearfix;
-        background-color: #fff;
         border-radius: 5px;
+        margin: 0 15px;
     }
 
     &-item {
         position: relative;
         float: left;
         width: 20%;
-        padding: 30px 38px 20px;
+        padding: 15px 38px 10px;
         height: 68px;
-        border-radius: 0 5px 5px 0;
+        background-color: #fff;
+
+        @include tablet {
+            background-color: #fff;
+            padding: 15px 20px 10px;
+        }
+        @include mobile {
+            width: 100%;
+            float: none;
+        }
+
         &:not(:last-child) {
             border-right: 1px solid #f2f2f2;
+        }
+        &:first-child {
+            border-radius: 5px 0 0 5px;
+            @include tablet {
+                border-radius: 0;
+            }
+        }
+        &:last-child {
+            border-radius: 0 5px 5px 0;
+            @include tablet {
+                border-radius: 0;
+            }
+            @include mobile {
+                margin-bottom: -11px;
+            }
         }
         .btn-lg {
             left: 0;
@@ -30,6 +58,14 @@
             border-radius: 0 5px 5px 0;
             position: absolute;
             font-size: 0.94rem;
+            text-transform: none;
+            @include tablet {
+                border-radius: 0;
+            }
+            @include mobile {
+                height: auto;
+                padding: 20px 0;
+            }
         }
         &.search {
             padding: 0;
@@ -43,15 +79,15 @@
         z-index: 3;
     }
     &-label {
-        position: absolute;
-        left: 38px;
-        top: 20px;
         font-size: 0.84rem;
         color: #848586;
     }
     &-wrapper {
         position: relative;
-        margin-bottom: 7%;  
+        margin-bottom: 7%;
+        @include tablet {
+            margin: 0 -15px;
+        }
     }
     &-popup {
         position: absolute;
@@ -67,9 +103,15 @@
         border-top: 1px solid #fafaf7;
         border-radius: 0 0 5px 5px;
         margin: -1px 15px 0;
+        @include tablet {
+            margin: 0;
+        }
 
         &__item {
             padding-top: 30px;
+            @include tablet {
+                padding-left: 20px;
+            }
             &--first {
                 padding-left: 20px;
             }
@@ -80,6 +122,9 @@
             .btn {
                 margin-left: 30px;
                 width: 165px;
+            }
+            @include tablet {
+                padding-right: 20px;
             }
         }
     }
@@ -99,6 +144,9 @@
         bottom: 0;
         width: 9999px;
         background-color: #522a6b;
+        @include mobile {
+            display: none;
+        }
     }
     &-toolbar {
         position: relative;
@@ -109,6 +157,12 @@
         padding-right: 20px;
         padding-top: 20px;
         padding-bottom: 20px;
+        @include mobile {
+            border-radius: 0;
+            text-align: center;
+            padding-right: 0;
+            margin: 0 -15px;
+        }
     }
     &-icons {
         ul {
@@ -117,9 +171,19 @@
             margin: 0;
             font-size: 0;
             @include clearfix;
+            @include mobile {
+                text-align: center;
+            }
             li {
                 float: left;
-                padding: 5px 19px;    
+                padding: 5px 19px;
+                @include tablet {
+                    padding: 3px 10px;
+                }
+                @include mobile {
+                    float: none;
+                    display: inline-block;
+                }
                 a {
                     display: block;
                     font-size: 35px;
@@ -141,7 +205,7 @@
         display: inline-block;
         width: auto;
         vertical-align: middle;
-        width: 110px;
+       
     }
     .bootstrap-select>.dropdown-toggle {
         background-color: transparent;
@@ -149,11 +213,20 @@
         padding-top: 0;
         padding-bottom: 0;
         padding-left: 0;
+        &:hover,
+        &:focus,
+        &:active,
+        &:active:focus {
+            background-color: transparent;
+        }
         .dropdown-menu>.active>a,
         .dropdown-menu>.active>a:focus,
         .dropdown-menu>.active>a:hover {
             background-color: transparent;
         }
+    }
+    .btn-group.open .dropdown-toggle {
+        background-color: transparent;
     }
     .bootstrap-select.btn-group .dropdown-toggle .filter-option {
         color: #fff;
@@ -261,6 +334,9 @@
         right: -12px;
         background: transparent;
         border: none;
+        @include tablet {
+            right: 0;
+        }
     }
 }
 
@@ -315,4 +391,10 @@
     &:hover {
         background-color: #fff;
     }
+}
+
+
+// map styles
+#map {
+    min-height: 1000px;
 }
