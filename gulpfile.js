@@ -68,7 +68,9 @@ gulp.task('scripts', function() {
     return gulp.src([
             sourceDir + '/jquery-2.2.1.min.js',
             sourceDir + '/bootstrap.js',
+            sourceDir + '/moment.js',
             sourceDir + '/bootstrap-select.js',
+            sourceDir + '/bootstrap-datetimepicker.js',
             sourceDir + '/validate.js',
             sourceDir + '/main.js'
         ])

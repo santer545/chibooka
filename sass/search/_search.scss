@@ -51,6 +51,7 @@
     }
     &-wrapper {
         position: relative;
+        margin-bottom: 7%;  
     }
     &-popup {
         position: absolute;
@@ -59,7 +60,9 @@
         right: 0;
         z-index: 2;
         width: 100%;
-        height: 300px;
+        overflow: hidden;
+        height: 0;
+        opacity: 0;
         background-color: #fdfdfd;
         border-top: 1px solid #fafaf7;
         border-radius: 0 0 5px 5px;
@@ -67,11 +70,99 @@
 
         &__item {
             padding-top: 30px;
-            padding-left: 20px;
+            &--first {
+                padding-left: 20px;
+            }
         }
+        &__bottom {
+            text-align: right;
+            padding: 50px 0 55px;
+            .btn {
+                margin-left: 30px;
+                width: 165px;
+            }
+        }
+    }
+    &-value {
+        padding-top: 5px;
+        display: block;
     }
 }
 
+.sort {
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        right: calc(100% - 1px);
+        top: 0;
+        bottom: 0;
+        width: 9999px;
+        background-color: #522a6b;
+    }
+    &-toolbar {
+        position: relative;
+        background-color: #522a6b;
+        border-radius: 0 5px 5px 0;
+        @include clearfix;
+        text-align: right;
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    &-icons {
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0;
+            @include clearfix;
+            li {
+                float: left;
+                padding: 5px 19px;    
+                a {
+                    display: block;
+                    font-size: 35px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    &-title {
+        color: #fff;
+        font-size: 1rem;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.sort-toolbar {
+    .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+        width: 110px;
+    }
+    .bootstrap-select>.dropdown-toggle {
+        background-color: transparent;
+        border: none;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        .dropdown-menu>.active>a,
+        .dropdown-menu>.active>a:focus,
+        .dropdown-menu>.active>a:hover {
+            background-color: transparent;
+        }
+    }
+    .bootstrap-select.btn-group .dropdown-toggle .filter-option {
+        color: #fff;
+    }
+    .caret {
+        border-left-color: #fff;
+        border-bottom-color: #fff;
+    }
+}
 
 
 // custom bootstrap select
@@ -88,7 +179,6 @@
 
     .dropdown-menu {
         margin: 0;
-        width: 200px;
         overflow-x: hidden;
         overflow-y: auto;
         box-shadow: none;
@@ -121,7 +211,7 @@
 .search {
     .bootstrap-select>.dropdown-toggle {
         border: none;
-        padding: 26px 30px 26px 42px;
+        padding: 26px 30px 24px 42px;
     }
 }
 
@@ -132,7 +222,7 @@
 }
 
 .bootstrap-select.btn-group .dropdown-toggle .caret {
-    margin-top: -4px;
+    margin-top: -2px;
 }
 
 .caret {
@@ -147,4 +237,82 @@
 
 .bootstrap-select.btn-group .dropdown-menu li a {
     outline: none;
+}
+
+
+
+// datepicker bootstrap
+.input-group.date {
+    .form-control {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        background-color: transparent;
+        border: none;
+        font-size: 1rem;
+        color: #522a6b;
+        height: 25px;
+    }
+    .input-group-addon {
+        padding: 0;
+        display: table;
+        position: absolute;
+        right: -12px;
+        background: transparent;
+        border: none;
+    }
+}
+
+.bootstrap-datetimepicker-widget table td.day {
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.bootstrap-datetimepicker-widget table td,
+.bootstrap-datetimepicker-widget table th {
+    [class^='fa'] {
+        transition: all 0.3s;
+    }
+}
+
+
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td:hover,
+.bootstrap-datetimepicker-widget table th.active,
+.bootstrap-datetimepicker-widget table th:hover {
+    background-color: #522a6b;
+    color: #fff;
+    [class^='fa'] {
+        color: #fff;
+    }
+    .btn-primary {
+        background-color: #522a6b;
+        border: 1px solid #522a6b;
+    }
+}
+
+.datepicker-days {
+    width: 290px;
+    padding: 10px 20px;
+    .table-condensed {
+        width: 250px;
+    }
+}
+
+.bootstrap-datetimepicker-widget table td,
+.bootstrap-datetimepicker-widget table th {
+    text-align: center;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+.bootstrap-datetimepicker-widget table td.separator {
+    background-color: #fff;
+    &:hover {
+        background-color: #fff;
+    }
 }

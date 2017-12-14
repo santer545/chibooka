@@ -23,6 +23,20 @@
 	}
 }
 
+.btn-warning {
+	background-color: #522a6b;
+	color: #fff;
+	border: 1px solid #522a6b;
+	&:hover,
+	&:focus,
+	&:active,
+	&:focus:active,
+	&:active:hover {
+		background-color: #2f0847;
+		border: 1px solid #2f0847;
+		outline: none;
+	}
+}
 
 
 // sizes

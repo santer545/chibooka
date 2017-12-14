@@ -69,10 +69,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="search-wrapper">
-                    <div class="search-popup">
+                    <div class="search-popup js-popup">
                         <div class="row">
                             <div class="col-md-2">
-                                <div class="search-popup__item">
+                                <div class="search-popup__item search-popup__item--first">
                                     <div class="form-label">Место для вас</div>
                                     <select class="selectpicker">
                                         <option>9:00</option>
@@ -227,6 +227,10 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="search-popup__bottom">
+                            <button class="btn btn-sm btn-warning">отмена</button>
+                            <button class="btn btn-sm btn-success">показать <span>121</span></button>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-2"></div>
@@ -237,13 +241,26 @@
                             <div class="search-holder">
                                 <div class="row">
                                     <div class="search-item">
-                                        <div class="search-label">Кол-во</div>    
+                                        <div class="search-label">Кол-во</div>
+                                        <div class="search-value"><span>3</span> человека</div>
                                     </div>
                                     <div class="search-item">
                                         <div class="search-label">Дата</div>
+                                        <div class='input-group date'>
+                                            <input type='text' class="form-control" id='datetimepicker1' placeholder="выберите дату">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
                                     </div>
                                     <div class="search-item">
                                         <div class="search-label">Время</div>
+                                        <div class='input-group date'>
+                                            <input type='text' class="form-control" id='datetimepicker3' placeholder="Выберите время">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
                                     </div>
                                     <div class="search-item search">
                                         <div class="search-icon">
@@ -256,7 +273,7 @@
                                         </select>
                                     </div>
                                     <div class="search-item">
-                                        <button class="btn-success btn-lg">Подобрать стол</button>
+                                        <button class="btn-success btn-lg js-popup-link">Подобрать стол</button>
                                     </div>
                                 </div>
                             </div>
@@ -265,19 +282,33 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="banner-navbar">
-                    <div class="banner-like">
-                        <i class="fa fa-heart" aria-hidden="true"></i>
+        <div class="sort">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="sort-toolbar">
+                        <div class="sort-title">Сортировать по</div>
+                        <select class="selectpicker">
+                            <option>рейтингу</option>
+                            <option>среднему чеку</option>
+                            <option>расстоянию</option>
+                        </select>
                     </div>
-                    <ul class="banner-menu">
-                        <li><a href="#">Мои данные</a></li>
-                        <li><a href="#">Избранное</a></li>
-                        <li><a href="#">История бронирований</a></li>
-                        <li><a href="#">Мои предложения</a></li>
-                        <li><a href="#">Уведомления</a></li>
-                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <div class="sort-icons">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-map" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-th-large" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
