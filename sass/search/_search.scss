@@ -69,6 +69,11 @@
         }
         &.search {
             padding: 0;
+            .bs-searchbox {
+                .form-control {
+                    padding: 32px 20px;
+                }
+            }
         }
     }
     &-icon {
@@ -144,7 +149,7 @@
         bottom: 0;
         width: 9999px;
         background-color: #522a6b;
-        @include mobile {
+        @include tablet {
             display: none;
         }
     }
@@ -155,9 +160,9 @@
         @include clearfix;
         text-align: right;
         padding-right: 20px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        @include mobile {
+        padding-top: 21px;
+        padding-bottom: 21px;
+        @include tablet {
             border-radius: 0;
             text-align: center;
             padding-right: 0;
@@ -171,19 +176,25 @@
             margin: 0;
             font-size: 0;
             @include clearfix;
-            @include mobile {
+            @include tablet {
                 text-align: center;
             }
             li {
                 float: left;
                 padding: 5px 19px;
+                opacity: 0.4;
+                &.active {
+                    opacity: 1;
+                }
+                @include mini-laptop {
+                    padding: 5px 10px;
+                }
                 @include tablet {
                     padding: 3px 10px;
-                }
-                @include mobile {
                     float: none;
                     display: inline-block;
                 }
+                
                 a {
                     display: block;
                     font-size: 35px;
@@ -203,9 +214,11 @@
 .sort-toolbar {
     .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
         display: inline-block;
-        width: auto;
+        width: 36%;
         vertical-align: middle;
-       
+        @include tablet {
+            width: auto;
+        }
     }
     .bootstrap-select>.dropdown-toggle {
         background-color: transparent;
@@ -230,6 +243,8 @@
     }
     .bootstrap-select.btn-group .dropdown-toggle .filter-option {
         color: #fff;
+        white-space: nowrap;
+        text-overflow: ellipsis;
     }
     .caret {
         border-left-color: #fff;
@@ -255,7 +270,22 @@
         overflow-x: hidden;
         overflow-y: auto;
         box-shadow: none;
+        padding: 0;
+        max-width: 100%;
     }
+}
+
+
+.bootstrap-select.btn-group .no-results {
+    margin: 0;
+    font-size: 0.84rem;
+    padding: 5px 17px;
+}
+
+.bs-actionsbox,
+.bs-donebutton,
+.bs-searchbox {
+    padding: 0;
 }
 
 .bootstrap-select>.dropdown-toggle {
@@ -292,6 +322,14 @@
     font-size: 1rem;
     color: #522a6b;
     text-transform: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li a span.text {
+    font-size: 0.84rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .bootstrap-select.btn-group .dropdown-toggle .caret {
@@ -395,6 +433,44 @@
 
 
 // map styles
-#map {
+/* #map {
     min-height: 1000px;
+} */
+
+
+
+
+/*style the box*/
+
+
+/* .gm-style .gm-style-iw {
+    background-color: #fff !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;    
+    width: 430px !important;
+    height: 440px !important;
+    padding-top: 0;
+    display: block !important;
+} */
+
+.gm-style-iw {
+    width: 360px !important;
+    top: 0 !important;
+    left: 0 !important;
+    background-color: #fff;
+    box-shadow: none;
+    border: none;
+    border-radius: 4px;
+    &:after {
+        content: '';
+        right: 100%;
+        top: 50%;
+        transform: translate(0, -50%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 40px 10px 0;
+        border-color: transparent #fff transparent transparent;
+    }
 }

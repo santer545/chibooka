@@ -84,5 +84,8 @@
 
 	&--bottom {
 		padding: 22% 0 15px;
+        @include mini-laptop {
+            padding: 6% 0 15px;
+        }
 	}
 }

@@ -72,7 +72,11 @@
 		}
         .btn-sm {
             min-width: 165px;
+            padding: 9px 20px;
         }
+    }
+    .bootstrap-select>.dropdown-toggle {
+        padding: 7px 20px;
     }
 }
 
@@ -117,6 +121,10 @@
     margin-top: -1px;
     @include tablet {
         padding: 30px 7% 15px;
+    }
+    &--holder {
+        height: 0;
+        overflow: hidden;
     }
     p {
         margin-bottom: 20px;
@@ -173,4 +181,9 @@
 		color: #e94f1b;
 		font-weight: 600;
 	}
+}
+
+.code-wrapper {
+    height: 0;
+    overflow: hidden;
 }

@@ -58,14 +58,23 @@
 							</div>
 							<div class="col-md-6">
 								<div class="form-group form-group--relative">
-									<input type="email" required placeholder="Ваш email" data-validate="email" class="form-control">
+									<input type="tel" required placeholder="Ваш телефон" data-validate="phone" class="form-control">
 									<button class="btn btn-xs btn-success">сменить</button>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group form-group--relative">
 									<input type="password" required placeholder="Ваш текущий пароль" data-validate="pass" class="form-control">
-									<button class="btn btn-xs btn-success">сменить</button>
+									<button class="btn btn-xs btn-success js-pass-btn">сменить</button>
+								</div>
+								<div class="pasword-change__holder js-pass-change">
+									<div class="form-group">
+										<input type="password" required placeholder="Ваш новый пароль" data-validate="pass" class="form-control">
+									</div>
+									<div class="form-group">
+										<input type="password" required placeholder="Повторите пароль" data-validate="pass" class="form-control">
+									</div>
+									<button class="btn btn-xs btn-success js-pass-btn">подтвердить</button>
 								</div>
 							</div>
 						</div>

@@ -109,7 +109,7 @@
         list-style-type: none;
         padding: 16px 0 0 1px; 
         margin: 0; 
-        @include tablet {
+        @include mobile {
             padding: 0 0 30px;
         }
         li {

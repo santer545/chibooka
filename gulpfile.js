@@ -72,6 +72,8 @@ gulp.task('scripts', function() {
             sourceDir + '/bootstrap-select.js',
             sourceDir + '/bootstrap-datetimepicker.js',
             sourceDir + '/validate.js',
+            sourceDir + '/jquery.maskedinput.js',
+            sourceDir + '/jquery.awesome-cursor.js',
             sourceDir + '/main.js'
         ])
 

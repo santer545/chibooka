@@ -3,8 +3,8 @@
         padding-top: 35px;
         padding-bottom: 40px;
         padding-right: 15%;
-        @include tablet {
-        	padding-right: 0;
+        @include mini-laptop {
+            padding-right: 0;
         }
 
         .form-control {
@@ -13,6 +13,7 @@
     }
     &-img {
     	margin-top: -53%;
+        cursor: url(../images/edit.cur), auto;
     	@include tablet {
     		margin-top: 0;
     		padding-top: 35px;
@@ -20,6 +21,15 @@
     	img {
     		border-radius: 5px;
     	}
+    }
+}
+
+.pasword-change__holder {
+    height: 0;
+    overflow: hidden;
+    text-align: right;
+    @include mobile {
+        text-align: center;
     }
 }
 

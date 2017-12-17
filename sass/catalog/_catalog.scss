@@ -20,7 +20,21 @@
     &-item {
         border-radius: 5px;
         margin-bottom: 30px;
-        
+        &.map-item {
+            margin: 0 0 -2px;
+            &:after {
+                position: absolute;
+                content: '';
+                right: 100%;
+                top: 50%;
+                transform: translate(0, -50%);
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 12.5px 50px 12.5px 0;
+                border-color: transparent #fff transparent transparent;
+            }
+        }
     }
     &-description {
         padding: 28px 28px 32px;
