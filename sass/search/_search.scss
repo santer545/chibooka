@@ -8,6 +8,15 @@
         }
     }
 
+    &-title {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -30px;
+        font-size: 1rem;
+        color: #fff;
+        text-align: center;
+    }
     &-holder {
         @include clearfix;
         border-radius: 5px;
@@ -71,7 +80,7 @@
             padding: 0;
             .bs-searchbox {
                 .form-control {
-                    padding: 32px 20px;
+                    padding: 15px 20px;
                 }
             }
         }
@@ -97,15 +106,14 @@
     &-popup {
         position: absolute;
         top: 100%;
-        left: 0;
-        right: 0;
+        right: -15px;
         z-index: 2;
         width: 100%;
         overflow: hidden;
         height: 0;
         opacity: 0;
         background-color: #fdfdfd;
-        border-top: 1px solid #fafaf7;
+        /* border-top: 1px solid #fafaf7; */
         border-radius: 0 0 5px 5px;
         margin: -1px 15px 0;
         @include tablet {
@@ -194,7 +202,7 @@
                     float: none;
                     display: inline-block;
                 }
-                
+
                 a {
                     display: block;
                     font-size: 35px;
@@ -272,6 +280,7 @@
         box-shadow: none;
         padding: 0;
         max-width: 100%;
+        top: 100%;
     }
 }
 
@@ -309,6 +318,7 @@
 .btn-group.open .dropdown-toggle {
     box-shadow: none;
     background-color: #fff;
+    float: none;
 }
 
 .search {
@@ -316,6 +326,18 @@
         border: none;
         padding: 26px 30px 24px 42px;
     }
+}
+
+.btn-default.active.focus,
+.btn-default.active:focus,
+.btn-default.active:hover,
+.btn-default:active.focus,
+.btn-default:active:focus,
+.btn-default:active:hover,
+.open>.btn-default.dropdown-toggle.focus,
+.open>.btn-default.dropdown-toggle:focus,
+.open>.btn-default.dropdown-toggle:hover {
+    background-color: #fff;
 }
 
 .bootstrap-select.btn-group .dropdown-toggle .filter-option {
@@ -433,11 +455,10 @@
 
 
 // map styles
+
 /* #map {
     min-height: 1000px;
 } */
-
-
 
 
 /*style the box*/
