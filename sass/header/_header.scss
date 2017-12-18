@@ -7,7 +7,7 @@
     height: 67px;
     overflow: hidden;
     z-index: 10;
-    transition: all 0.3s;
+    transition: height 0.3s;
     @include mini-laptop {
         height: 46px;
     }
