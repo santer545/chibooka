@@ -15,6 +15,9 @@ $(document).ready(function() {
 
     map();
 
+    navbarDropdown();
+
+
 });
 
 function mobileNavbar() {
@@ -39,7 +42,7 @@ function animateHeight() {
     navLink.click(function() {
         if (nav.height() === 0) {
             autoHeightAnimate(nav, animateTime);
-            $(nav).css({'opacity':'1', 'border-top': '1px solid #fafaf7'});
+            $(nav).css({ 'opacity': '1', 'border-top': '1px solid #fafaf7' });
 
         } else {
             nav.stop().animate({ height: '0', opacity: '0' }, animateTime);
@@ -61,12 +64,40 @@ function animateHeight() {
         animateTime2 = 500,
         navLink2 = $('.js-pass-btn');
     navLink2.click(function() {
-        if (nav1.height() === 0) {
+        if (nav2.height() === 0) {
             autoHeightAnimate(nav2, animateTime2);
         } else {
             nav2.stop().animate({ height: '0' }, animateTime2);
         }
     });
+
+    var nav3 = $('.js-code'),
+        animateTime3 = 500,
+        navLink3 = $('.js_send_phone');
+    navLink3.click(function() {
+        if (nav3.height() === 0) {
+            autoHeightAnimate(nav3, animateTime3);
+            $(nav).css('opacity', '1');
+        } else {
+            nav3.stop().animate({ height: '0', opacity: '0' }, animateTime);
+        }
+    });
+
+
+
+    var phoneWr = $('.js-phone-wrapper'),
+        animateTimePhone = 500,
+        phoneLink = $('.js-forgot');
+    phoneLink.click(function() {
+        if (phoneWr.height() === 0) {
+            autoHeightAnimate(phoneWr, animateTimePhone);
+        } else {
+            phoneWr.stop().animate({ height: '0' }, animateTimePhone);
+        }
+    });
+
+
+
 
     /* Function to animate height: auto */
     function autoHeightAnimate(element, time) {
@@ -166,7 +197,6 @@ function map() {
     google.maps.event.addListener(infowindow, 'domready', function() {
         // Reference to the DIV which receives the contents of the infowindow using jQuery
         var iwOuter = $('.gm-style-iw');
-        console.log($(iwOuter).next());
         $(iwOuter).next().remove();
 
         /* The DIV we want to change is above the .gm-style-iw DIV.
@@ -195,5 +225,14 @@ function map() {
         iwBackground.children(':nth-child(3)').find('div').children().remove();
 
 
+    });
+}
+
+
+function navbarDropdown() {
+    $('.js-navbar > ul').find('> li').hover(function() {
+        $(this).find('ul')
+            .removeClass('noJS')
+            .stop(true, true).slideToggle('fast');
     });
 }

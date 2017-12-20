@@ -14,7 +14,7 @@
         top: 50%;
         border-radius: 4px;
         transform: translate(-50%, -50%)!important;
-        @include mobile {
+        @include tablet {
         	width: 90%;
         	position: static;
         	margin-top: 50px;
@@ -183,7 +183,16 @@
 	}
 }
 
-.code-wrapper {
+.code-wrapper,
+.phone-wrapper {
     height: 0;
     overflow: hidden;
+}
+
+.forgot-link {
+    cursor: pointer;
+    text-decoration: underline;
+    &:hover {
+        text-decoration: none;
+    }
 }

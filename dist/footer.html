@@ -97,6 +97,37 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
+                                    <div class="form-group"><a class="js-forgot forgot-link">Забыл пароль</a></div>
+                                </div>
+                            </div>
+                            <div class="row js-phone-wrapper phone-wrapper">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input type="tel" name="phone" class="form-control js_phone" data-mask="+99(999) 999-9999" required data-validate="phone" placeholder="Введите телефон">
+                                        <span class="error-text"></span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <a class="btn btn-success btn-sm js_send_phone">Отправить SMS код</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row js-code code-wrapper">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" name="phone_code" class="form-control" required placeholder="Введите код">
+                                        <span class="error-text"></span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <a class="btn btn-success btn-sm js_send_phone" data-csrf="{{ csrf_token() }}">подтвердить</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
                                     <div class="social-authorize">
                                         <p>Войти при помощи:</p>
                                         <ul>
@@ -315,26 +346,21 @@
         </div>
     </div>
 </div>
-
-
-
 <div class="modal fade" id="phone_change" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Сменить номер</h4>
             </div>
-
             <div class="modal-body">
                 <!-- Tab panes -->
                 <div class="tab-content modal-tab__content">
                     <div role="tabpanel" class="tab-pane fade in active">
-
                         <form class="form js_validate">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text"  name="phone_code" class="form-control" required placeholder="@lang('form_labels.phone_code')">
+                                        <input type="text" name="phone_code" class="form-control" required placeholder="@lang('form_labels.phone_code')">
                                         <span class="error-text">Введите номер</span>
                                     </div>
                                 </div>
@@ -345,16 +371,12 @@
                                 </div>
                             </div>
                         </form>
-
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
-
-
 <script src="js/all.min.js"></script>
 </body>
 

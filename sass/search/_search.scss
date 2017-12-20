@@ -16,6 +16,8 @@
         font-size: 1rem;
         color: #fff;
         text-align: center;
+        cursor: pointer;
+        z-index: 1;
     }
     &-holder {
         @include clearfix;
@@ -117,7 +119,7 @@
         border-radius: 0 0 5px 5px;
         margin: -1px 15px 0;
         @include tablet {
-            margin: 0;
+            margin: 0 15px;
         }
 
         &__item {
@@ -127,11 +129,14 @@
             }
             &--first {
                 padding-left: 20px;
+                @include tablet {
+                    padding-right: 20px;
+                }
             }
         }
         &__bottom {
             text-align: right;
-            padding: 50px 0 55px;
+            padding: 50px 20px 55px 0;
             .btn {
                 margin-left: 30px;
                 width: 165px;
@@ -198,7 +203,7 @@
                     padding: 5px 10px;
                 }
                 @include tablet {
-                    padding: 3px 10px;
+                    padding: 5px 10px;
                     float: none;
                     display: inline-block;
                 }
@@ -216,6 +221,22 @@
         font-size: 1rem;
         display: inline-block;
         vertical-align: middle;
+    }
+    .btn-default.active.focus,
+    .btn-default.active:focus,
+    .btn-default.active:hover,
+    .btn-default:active.focus,
+    .btn-default:active:focus,
+    .btn-default:active:hover,
+    .open>.btn-default.dropdown-toggle.focus,
+    .open>.btn-default.dropdown-toggle:focus,
+    .open>.btn-default.dropdown-toggle:hover {
+        background-color: transparent;
+    }
+    .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) .dropdown-menu {
+        @include tablet {
+            min-width: 150px;
+        }
     }
 }
 
@@ -265,6 +286,7 @@
 .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
     width: 100%;
     display: block;
+    @include clearfix;
     .dropdown-menu>.active>a,
     .dropdown-menu>.active>a:focus,
     .dropdown-menu>.active>a:hover {
@@ -300,7 +322,7 @@
 .bootstrap-select>.dropdown-toggle {
     border: 1px solid #522a6b;
     border-radius: 5px;
-    padding: 13px 20px;
+    padding: 10px 20px;
     &:hover,
     &:focus,
     &:active,
@@ -318,7 +340,6 @@
 .btn-group.open .dropdown-toggle {
     box-shadow: none;
     background-color: #fff;
-    float: none;
 }
 
 .search {
@@ -494,4 +515,14 @@
         border-width: 10px 40px 10px 0;
         border-color: transparent #fff transparent transparent;
     }
+}
+
+.popup-close {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    cursor: pointer;
+    color: #000;
+    font-size: 20px;
+    line-height: 20px;
 }

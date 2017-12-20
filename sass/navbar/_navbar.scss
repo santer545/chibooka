@@ -20,7 +20,7 @@
         bottom: 0;
         background-color: #522a6b;
         height: 68px;
-        transition: all 0.3s;
+        transition: height 0.3s;
         @include mini-laptop {
             height: 46px;
         }
@@ -48,6 +48,7 @@
         }
 
         li {
+            position: relative;
             display: inline-block;
             vertical-align: middle;
             @include tablet {
@@ -103,12 +104,38 @@
                     }
                 }
             }
+            ul {
+                position: absolute;
+                display: none;
+                width: 200px;
+                background-color: #fff;
+                left: -30px;
+                padding-left: 0;
+                @include tablet {
+                    padding-top: 0;
+                }
+                li {
+                    display: block;
+                    a {
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        padding-left: 20px;
+                        padding-right: 20px;
+                        color: #522a6b;
+                    }
+                }
+            }
+            &:hover {
+                ul.noJS {
+                    display: block;
+                }
+            }
         }
     }
     .location {
         display: inline-block;
         vertical-align: middle;
-        padding: 24px 46px;
+        padding: 24px 46px 25px;
         color: #fff;
         font-size: 1rem;
         font-weight: 600;

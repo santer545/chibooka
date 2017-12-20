@@ -16,7 +16,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-2 col-sm-4">
                                 <div class="search-popup__item">
                                     <div class="form-label">Тип заведения</div>
                                     <label for="radio-1" class="custom-radio">
@@ -51,7 +51,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-2 col-sm-4">
                                 <div class="search-popup__item">
                                     <div class="form-label">Цель визита</div>
                                     <label for="breakfast" class="custom-radio">
@@ -86,7 +86,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-2 col-sm-4">
                                 <div class="search-popup__item">
                                     <div class="form-label">Цель визита</div>
                                     <label for="breakfast1" class="custom-radio">
@@ -121,50 +121,53 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-2 col-sm-4">
                                 <div class="search-popup__item">
                                     <div class="form-label">Средний чек</div>
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-2 col-sm-4">
                                 <div class="search-popup__item">
                                     <div class="form-label">Кухня</div>
-                                    <label for="japonise" class="custom-radio">
-                                        <input type="radio" name="cuisine" value="cuisine-1" checked id="japonise">
-                                        <span class="fake-radio"></span>
+                                    <label for="japonise" class="custom-checkbox custom-checkbox--search">
+                                        <input type="checkbox" checked id="japonise">
+                                        <span class="fake-checkbox"></span>
                                         <span>Японская</span>
                                     </label>
-                                    <label for="ukranian" class="custom-radio">
-                                        <input type="radio" name="cuisine" value="cuisine-2" id="ukranian">
-                                        <span class="fake-radio"></span>
+                                    <label for="ukranian" class="custom-checkbox custom-checkbox--search">
+                                        <input type="checkbox" id="ukranian">
+                                        <span class="fake-checkbox"></span>
                                         <span>Укранская</span>
                                     </label>
-                                    <label for="italian" class="custom-radio">
-                                        <input type="radio" name="cuisine" value="cuisine-3" id="italian">
-                                        <span class="fake-radio"></span>
+                                    <label for="italian" class="custom-checkbox custom-checkbox--search">
+                                        <input type="checkbox" id="italian">
+                                        <span class="fake-checkbox"></span>
                                         <span>Итальянская</span>
                                     </label>
-                                    <label for="tay" class="custom-radio">
-                                        <input type="radio" name="cuisine" value="cuisine-4" id="tay">
-                                        <span class="fake-radio"></span>
+                                    <label for="tay" class="custom-checkbox custom-checkbox--search">
+                                        <input type="checkbox" id="tay">
+                                        <span class="fake-checkbox"></span>
                                         <span>Тайско-китайская</span>
                                     </label>
-                                    <label for="fast" class="custom-radio">
-                                        <input type="radio" name="cuisine" value="cuisine-5" id="fast">
-                                        <span class="fake-radio"></span>
+                                    <label for="fast" class="custom-checkbox custom-checkbox--search">
+                                        <input type="checkbox" id="fast">
+                                        <span class="fake-checkbox"></span>
                                         <span>Фаст-фуд</span>
                                     </label>
-                                    <label for="franch" class="custom-radio">
-                                        <input type="radio" name="cuisine" value="cuisine-6" id="franch">
-                                        <span class="fake-radio"></span>
+                                    <label for="franch" class="custom-checkbox custom-checkbox--search">
+                                        <input type="checkbox" id="franch">
+                                        <span class="fake-checkbox"></span>
                                         <span>Французская</span>
                                     </label>
                                 </div>
                             </div>
                         </div>
                         <div class="search-popup__bottom">
-                            <button class="btn btn-sm btn-warning">отмена</button>
+                            <button class="btn btn-sm btn-warning">сбросить</button>
                             <button class="btn btn-sm btn-success">показать <span>121</span></button>
+                        </div>
+                        <div class="popup-close js-popup-link">
+                            <i class="fa fa-times" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="row">
@@ -176,8 +179,9 @@
                             <div class="search-holder">
                                 <div class="row">
                                     <div class="search-item">
-                                        <div class="search-label">Кол-во</div>
-                                        <div class="search-value"><span>3</span> человека</div>
+                                        <div class="search-label">Кол-во людей</div>
+                                        <input type="text" value="3" class="form-control form-control--transparent">
+                                        <!-- <div class="search-value"><span>3</span> человека</div> -->
                                     </div>
                                     <div class="search-item">
                                         <div class="search-label">Дата</div>
@@ -208,8 +212,8 @@
                                         </select>
                                     </div>
                                     <div class="search-item">
-                                        <span class="search-title">Расширеный поиск</span>
-                                        <button class="btn btn-success btn-lg js-popup-link">Подобрать стол</button>
+                                        <span class="search-title js-popup-link">Расширеный поиск</span>
+                                        <button class="btn btn-success btn-lg">Подобрать заведение</button>
                                     </div>
                                 </div>
                             </div>
@@ -220,7 +224,7 @@
         </div>
         <div class="sort">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-6">
                     <div class="sort-toolbar">
                         <div class="sort-title">Сортировать по</div>
                         <select class="selectpicker">
@@ -230,15 +234,15 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 col-sm-3">
                     <div class="sort-icons">
                         <ul>
-                            <li class="active">
+                            <li>
                                 <a href="#">
                                     <i class="fa fa-map" aria-hidden="true"></i>
                                 </a>
                             </li>
-                            <li>
+                            <li class="active">
                                 <a href="#">
                                     <i class="fa fa-th-large" aria-hidden="true"></i>
                                 </a>

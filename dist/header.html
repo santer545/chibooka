@@ -30,7 +30,15 @@
                             <div class="location"><span><i class="fa fa-map-marker" aria-hidden="true"></i></span>Харьков</div>
                             <div class="mobile-navbar js-navbar">
                                 <ul>
-                                    <li><a href="#">Заведения</a></li>
+                                    <li><a href="#">Заведения</a>
+                                        <ul class="noJS">
+                                            <li><a href="#">Рестораны</a></li>
+                                            <li><a href="#">Кафе</a></li>
+                                            <li><a href="#">Пабы</a></li>
+                                            <li><a href="#">Кофетерий</a></li>
+                                            <li><a href="#">Столовая</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a href="#">Предложения</a></li>
                                     <li><a href="#">О нас</a></li>
                                     <li><a href="#">Рестораторам</a></li>
@@ -42,10 +50,16 @@
                                     <a href="#" class="lang">
                                         <img src="images/lang-1.jpg" alt="">
                                     </a>
-                                    <a class="authorize hidden" data-toggle="modal" data-target="#authorize" role="button">
-                                        Вход / регистрация
-                                    </a>
-                                    <div class="toolbar">
+                                    <div class="authorize">
+                                        <a class="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <span>Войти</span><i class="fa fa-sign-in" aria-hidden="true"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                            <li><a data-toggle="modal" data-target="#authorize" role="button">Вход</a></li>
+                                            <li><a data-toggle="modal" data-target="#restorator" role="button">Вход для ресторатора</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="toolbar hidden">
                                         <a class="like">
                                             <div class="like-count">46</div>
                                             <i class="fa fa-heart" aria-hidden="true"></i>
