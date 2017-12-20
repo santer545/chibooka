@@ -257,11 +257,11 @@
         padding-left: 0;
     }
     .like {
-        position: relative;
+        position: relative;        
+        margin-right: 10px;
         @include mini-laptop {
-            margin-left: 10px;
+            margin-left: 8px;
         }
-        margin-right: 25px;
         &-count {
             position: absolute;
             width: 18px;
@@ -277,7 +277,10 @@
         }
     }
     .bell {
-        margin-right: 27px;
+        margin-right: 10px;
+    }
+    .user {
+        margin-right: 10px; 
     }
     a {
         display: inline-block;

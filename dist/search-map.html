@@ -70,6 +70,9 @@
                                         <a class="user">
                                             <i class="fa fa-user" aria-hidden="true"></i>
                                         </a>
+                                        <a href="#" class="out">
+                                            <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -605,7 +608,6 @@
         </div>
     </div>
 </div>
-<!-- Modal -->
 <div class="modal fade" id="restorator" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog--big" role="document">
         <div class="modal-header">
@@ -616,18 +618,21 @@
             <div class="modal-body">
                 <form action="#" class="form js_validate">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="email" class="form-control" required data-validate="email" placeholder="Email">
-                                <span class="error-text">Введите Ваш email</span>
-                            </div>
-                        </div>
+
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="tel" class="form-control" required data-validate="phone" placeholder="Телефон">
                                 <span class="error-text">Введите Ваш телефон</span>
                             </div>
                         </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="password" name="password" class="form-control" required placeholder="@lang('form_labels.password')">
+                                <span class="error-text">@lang('errors.password_required')</span>
+                            </div>
+                        </div>
+                        
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="remember333" class="custom-checkbox custom-checkbox--inverse">
@@ -644,45 +649,50 @@
                                 <button class="btn btn-success btn-sm" type="submit">войти</button>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <a href="#" class="js-restorator-application">Оставить заявку</a>
+                        </div>
                     </div>
                 </form>
             </div>
-            <div class="modal-body__bottom">
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="modal-bottom__heading">Хотите получить доступ к кабинету ресторатора и зарабатывать с RestoBooking?</div>
-                        <p>Оставьте контактные данные и мы с Вами свяжемся.</p>
+            <div class="js-modal-bottom modal-body__bottom--holder">
+                <div class="modal-body__bottom">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="modal-bottom__heading">Хотите получить доступ к кабинету ресторатора и зарабатывать с RestoBooking?</div>
+                            <p>Оставьте контактные данные и мы с Вами свяжемся.</p>
+                        </div>
                     </div>
+                    <form action="#" class="form js_validate">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" required placeholder="Имя">
+                                    <span class="error-text">Введите Ваше имя</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" required placeholder="Фамилия">
+                                    <span class="error-text">Введите Вашу фамилию</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" required data-validate="phone" placeholder="Телефон">
+                                    <span class="error-text">Введите Ваш телефон</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <button class="btn btn-success btn-sm" type="submit">Оставить заявку</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <form action="#" class="form js_validate">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" required placeholder="Имя">
-                                <span class="error-text">Введите Ваше имя</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" required placeholder="Фамилия">
-                                <span class="error-text">Введите Вашу фамилию</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="tel" class="form-control" required data-validate="phone" placeholder="Телефон">
-                                <span class="error-text">Введите Ваш телефон</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <button class="btn btn-success btn-sm" type="submit">Оставить заявку</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
             </div>
         </div>
     </div>
