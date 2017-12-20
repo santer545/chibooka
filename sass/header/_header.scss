@@ -93,6 +93,7 @@
 }
 
 .lang {
+    position: relative;
     display: inline-block;
     vertical-align: middle;
     margin: 0 35px;
@@ -100,6 +101,25 @@
     @include mini-laptop {
         margin: 0 10px;
         padding-top: 10px;
+    }
+    .dropdown-menu {
+        display: none;
+        min-width: 0;
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        li {
+            display: block;
+            
+            &:not(:last-child) {
+                padding: 0;
+            }
+        }
+    }
+    &.open {
+        .dropdown-menu {
+            display: block;
+        }
     }
 }
 
