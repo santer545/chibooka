@@ -18,6 +18,10 @@ $(document).ready(function() {
     navbarDropdown();
 
 
+
+    languageDropDown();
+
+
 });
 
 function mobileNavbar() {
@@ -151,6 +155,9 @@ function inputMasks() {
 
 
 function map() {
+    var map1 = $('#map');
+    console.log(map1.length)
+    if(map1.length) {
     var latlng = new google.maps.LatLng("49.9980554", "36.240871");
 
 
@@ -226,6 +233,7 @@ function map() {
 
 
     });
+    }
 }
 
 
@@ -235,4 +243,34 @@ function navbarDropdown() {
             .removeClass('noJS')
             .stop(true, true).slideToggle('fast');
     });
+}
+
+function languageDropDown() {
+    $('.lang .dropdown').click(function() {
+        var linkText = $(this).find('img').attr('src');
+        $(this).siblings('.dropdown-menu').find('a').each(function(i, element) {
+            var currentLang = $(this).find('img').attr('src');
+            if (linkText == currentLang) {
+                $(this).closest('li').hide();
+            } else {
+                $(this).closest('li').show();
+            }
+        });
+    });
+
+
+    $('.dropdown-menu li a').click(function() {
+        console.log('!!!');
+
+        var text = $(this).find('img').attr('src');
+        console.log(text);
+        $(this).closest('.lang').find('.dropdown').find('img').attr('src', text);
+        console.log($(this).closest('.lang').find('.dropdown').find('img'));
+    });
+
+
+
+
+
+    $('.lang').find('.dropdown-menu').find('li:eq(0)').hide();
 }

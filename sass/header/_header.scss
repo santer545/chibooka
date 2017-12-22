@@ -110,10 +110,21 @@
         border-radius: 0;
         li {
             display: block;
-            
             &:not(:last-child) {
                 padding: 0;
             }
+        }
+        a {
+            display: block;
+            padding: 0;
+            &:after,
+            &:before {
+                display: none;
+            }
+        }
+        img {
+            display: inline-block;
+            vertical-align: top;
         }
     }
     &.open {
