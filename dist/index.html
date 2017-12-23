@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
-<body>
+<body class="main-page">
     <div class="wrapper">
-        <header class="header" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+        <header class="header header-main" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-2 col-xs-3">
@@ -96,18 +96,646 @@
                 </div>
             </div>
         </header>
-	<div class="banner" style="background-image: url(images/header-bg.jpg)">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-2">
-					
-				</div>
-				<div class="col-md-10">
-					
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="banner" style="background-image: url(images/main-bg.jpg)">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="main-search-wrapper">
+                    <div class="search-popup js-popup">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="search-popup__item search-popup__item--first">
+                                    <div class="form-label">Место для вас</div>
+                                    <select class="selectpicker">
+                                        <option>9:00</option>
+                                        <option>10:00</option>
+                                        <option>11:00</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="search-popup__item">
+                                    <div class="form-label">Тип заведения</div>
+                                    <label for="radio-1" class="custom-radio">
+                                        <input type="radio" name="pab" value="pab-1" checked id="pab-1">
+                                        <span class="fake-radio"></span>
+                                        <span>Бар</span>
+                                    </label>
+                                    <label for="pab-2" class="custom-radio">
+                                        <input type="radio" name="pab" value="pab-2" id="pab-2">
+                                        <span class="fake-radio"></span>
+                                        <span>Паб</span>
+                                    </label>
+                                    <label for="pab-3" class="custom-radio">
+                                        <input type="radio" name="pab" value="pab-3" id="pab-3">
+                                        <span class="fake-radio"></span>
+                                        <span>Караоке</span>
+                                    </label>
+                                    <label for="pab-4" class="custom-radio">
+                                        <input type="radio" name="pab" value="pab-4" id="pab-4">
+                                        <span class="fake-radio"></span>
+                                        <span>Ресторан</span>
+                                    </label>
+                                    <label for="pab-5" class="custom-radio">
+                                        <input type="radio" name="pab" value="pab-5" id="pab-5">
+                                        <span class="fake-radio"></span>
+                                        <span>Пиццерия</span>
+                                    </label>
+                                    <label for="pab-6" class="custom-radio">
+                                        <input type="radio" name="pab" value="pab-6" id="pab-6">
+                                        <span class="fake-radio"></span>
+                                        <span>Кафе</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="search-popup__item">
+                                    <div class="form-label">Цель визита</div>
+                                    <label for="breakfast" class="custom-radio">
+                                        <input type="radio" name="eat" value="eat-1" checked id="breakfast">
+                                        <span class="fake-radio"></span>
+                                        <span>Завтрак</span>
+                                    </label>
+                                    <label for="dinner" class="custom-radio">
+                                        <input type="radio" name="eat" value="eat-2" id="dinner">
+                                        <span class="fake-radio"></span>
+                                        <span>Ужин</span>
+                                    </label>
+                                    <label for="buisness" class="custom-radio">
+                                        <input type="radio" name="eat" value="eat-3" id="buisness">
+                                        <span class="fake-radio"></span>
+                                        <span>Деловая встреча</span>
+                                    </label>
+                                    <label for="lanch-1" class="custom-radio">
+                                        <input type="radio" name="eat" value="eat-4" id="lanch-1">
+                                        <span class="fake-radio"></span>
+                                        <span>Обед</span>
+                                    </label>
+                                    <label for="lanch" class="custom-radio">
+                                        <input type="radio" name="eat" value="eat-5" id="lanch">
+                                        <span class="fake-radio"></span>
+                                        <span>Ланч</span>
+                                    </label>
+                                    <label for="date" class="custom-radio">
+                                        <input type="radio" name="eat" value="eat-6" id="date">
+                                        <span class="fake-radio"></span>
+                                        <span>Свидание</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="search-popup__item">
+                                    <div class="form-label">Цель визита</div>
+                                    <label for="breakfast1" class="custom-radio">
+                                        <input type="radio" name="eat1" value="eat-11" checked id="breakfast1">
+                                        <span class="fake-radio"></span>
+                                        <span>Завтрак</span>
+                                    </label>
+                                    <label for="dinner1" class="custom-radio">
+                                        <input type="radio" name="eat1" value="eat-21" id="dinner1">
+                                        <span class="fake-radio"></span>
+                                        <span>Ужин</span>
+                                    </label>
+                                    <label for="buisness1" class="custom-radio">
+                                        <input type="radio" name="eat1" value="eat-31" id="buisness1">
+                                        <span class="fake-radio"></span>
+                                        <span>Деловая встреча</span>
+                                    </label>
+                                    <label for="lanch-11" class="custom-radio">
+                                        <input type="radio" name="eat1" value="eat-41" id="lanch-11">
+                                        <span class="fake-radio"></span>
+                                        <span>Обед</span>
+                                    </label>
+                                    <label for="lanch1" class="custom-radio">
+                                        <input type="radio" name="eat1" value="eat-51" id="lanch1">
+                                        <span class="fake-radio"></span>
+                                        <span>Ланч</span>
+                                    </label>
+                                    <label for="date1" class="custom-radio">
+                                        <input type="radio" name="eat1" value="eat-61" id="date1">
+                                        <span class="fake-radio"></span>
+                                        <span>Свидание</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="search-popup__item">
+                                    <div class="form-label">Средний чек</div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="От">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="До">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4">
+                                <div class="search-popup__item">
+                                    <div class="form-label">Кухня</div>
+                                    <label for="japonise" class="custom-checkbox custom-checkbox--search">
+                                        <input type="checkbox" checked id="japonise">
+                                        <span class="fake-checkbox"></span>
+                                        <span>Японская</span>
+                                    </label>
+                                    <label for="ukranian" class="custom-checkbox custom-checkbox--search">
+                                        <input type="checkbox" id="ukranian">
+                                        <span class="fake-checkbox"></span>
+                                        <span>Укранская</span>
+                                    </label>
+                                    <label for="italian" class="custom-checkbox custom-checkbox--search">
+                                        <input type="checkbox" id="italian">
+                                        <span class="fake-checkbox"></span>
+                                        <span>Итальянская</span>
+                                    </label>
+                                    <label for="tay" class="custom-checkbox custom-checkbox--search">
+                                        <input type="checkbox" id="tay">
+                                        <span class="fake-checkbox"></span>
+                                        <span>Тайско-китайская</span>
+                                    </label>
+                                    <label for="fast" class="custom-checkbox custom-checkbox--search">
+                                        <input type="checkbox" id="fast">
+                                        <span class="fake-checkbox"></span>
+                                        <span>Фаст-фуд</span>
+                                    </label>
+                                    <label for="franch" class="custom-checkbox custom-checkbox--search">
+                                        <input type="checkbox" id="franch">
+                                        <span class="fake-checkbox"></span>
+                                        <span>Французская</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search-popup__bottom">
+                            <button class="btn btn-sm btn-warning">сбросить</button>
+                            <button class="btn btn-sm btn-success">показать <span>121</span></button>
+                        </div>
+                        <div class="popup-close js-popup-link">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="row main-search">
+                        <div class="col-md-2">
+                            <div class="logo-main">
+                                <img src="images/main-logo.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="main-heading">
+                                <div class="heading-icon">
+                                    <i class="fa fa-bookmark" aria-hidden="true"></i>
+                                </div>
+                                Бронируйте столик и наслаждайтесь прекрасной едой каждый день
+                            </div>
+                            <div class="search-holder">
+                                <div class="row">
+                                    <div class="search-item">
+                                        <div class="search-label">Кол-во людей</div>
+                                        <input type="text" value="3" class="form-control form-control--transparent">
+                                        <!-- <div class="search-value"><span>3</span> человека</div> -->
+                                    </div>
+                                    <div class="search-item">
+                                        <div class="search-label">Дата</div>
+                                        <div class='input-group date'>
+                                            <input type='text' class="form-control" id='datetimepicker1' placeholder="выберите дату">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="search-item">
+                                        <div class="search-label">Время</div>
+                                        <div class='input-group date'>
+                                            <input type='text' class="form-control" id='datetimepicker3' placeholder="Выберите время">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="search-item search">
+                                        <div class="search-icon">
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                        </div>
+                                        <select class="selectpicker" data-live-search="true">
+                                            <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
+                                            <option data-tokens="Burger, Shake and a Smile">Burger, Shake and a Smile</option>
+                                            <option data-tokens="Sugar Spice and all things nice">Sugar, Spice and all things nice</option>
+                                        </select>
+                                    </div>
+                                    <div class="search-item">
+                                        <span class="search-title js-popup-link">Расширеный поиск</span>
+                                        <button class="btn btn-success btn-lg">Подобрать заведение</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sort">
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="sort-toolbar">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<main id="main">
+    <section class="main-section">
+        <div class="container-fluid">
+            <div class="main-h2 clearfix">
+                <div class="pull-left">
+                    <div class="heading-icon">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    </div>
+                    заведения поблизости от вас</div>
+                <div class="slider-arrows pull-right">
+                    <div class="swiper-arrows-holder">
+                    	<div class="swiper-button-next" id="button-next-1">
+                    		<i class="fa fa-angle-right" aria-hidden="true"></i>
+                    	</div>
+                    	<div class="swiper-button-prev" id="button-prev-1">
+                    		<i class="fa fa-angle-left" aria-hidden="true"></i>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-container" id="main-slider-1">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="catalog-item">
+                            <div class="catalog-img">
+                                <img src="images/favorite-1.jpg" alt="">
+                            </div>
+                            <div class="catalog-description">
+                                <div class="catalog-heading">44 Favorite Place</div>
+                                <p><strong>Ресторан.</strong> Средний чек: 112 гривен</p>
+                                <p><strong>Адрес:</strong> ул. Пушкинская, 44 – <a href="#">от вас 455 метров</a></p>
+                                <div class="catalog-rating">
+                                    <ul>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        </li>
+                                    </ul>
+                                    <div class="rating-count">
+                                        <a href=""><span>30</span> отзывов</a>
+                                    </div>
+                                </div>
+                                <div class="catalog-bottom">
+                                    <div class="catalog-bottom__left"><strong class="catalog-number">21</strong> Столов свободно</div>
+                                    <div class="catalog-bottom__btn">
+                                        <button class="btn btn-success btn-sm">зачибучить</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="catalog-item">
+                            <div class="catalog-img">
+                                <img src="images/favorite-1.jpg" alt="">
+                            </div>
+                            <div class="catalog-description">
+                                <div class="catalog-heading">44 Favorite Place</div>
+                                <p><strong>Ресторан.</strong> Средний чек: 112 гривен</p>
+                                <p><strong>Адрес:</strong> ул. Пушкинская, 44 – <a href="#">от вас 455 метров</a></p>
+                                <div class="catalog-rating">
+                                    <ul>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        </li>
+                                    </ul>
+                                    <div class="rating-count">
+                                        <a href=""><span>30</span> отзывов</a>
+                                    </div>
+                                </div>
+                                <div class="catalog-bottom">
+                                    <div class="catalog-bottom__left"><strong class="catalog-number">21</strong> Столов свободно</div>
+                                    <div class="catalog-bottom__btn">
+                                        <button class="btn btn-success btn-sm">зачибучить</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="catalog-item">
+                            <div class="catalog-img">
+                                <img src="images/favorite-1.jpg" alt="">
+                            </div>
+                            <div class="catalog-description">
+                                <div class="catalog-heading">44 Favorite Place</div>
+                                <p><strong>Ресторан.</strong> Средний чек: 112 гривен</p>
+                                <p><strong>Адрес:</strong> ул. Пушкинская, 44 – <a href="#">от вас 455 метров</a></p>
+                                <div class="catalog-rating">
+                                    <ul>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        </li>
+                                    </ul>
+                                    <div class="rating-count">
+                                        <a href=""><span>30</span> отзывов</a>
+                                    </div>
+                                </div>
+                                <div class="catalog-bottom">
+                                    <div class="catalog-bottom__left"><strong class="catalog-number">21</strong> Столов свободно</div>
+                                    <div class="catalog-bottom__btn">
+                                        <button class="btn btn-success btn-sm">зачибучить</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="catalog-item">
+                            <div class="catalog-img">
+                                <img src="images/favorite-1.jpg" alt="">
+                            </div>
+                            <div class="catalog-description">
+                                <div class="catalog-heading">44 Favorite Place</div>
+                                <p><strong>Ресторан.</strong> Средний чек: 112 гривен</p>
+                                <p><strong>Адрес:</strong> ул. Пушкинская, 44 – <a href="#">от вас 455 метров</a></p>
+                                <div class="catalog-rating">
+                                    <ul>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        </li>
+                                    </ul>
+                                    <div class="rating-count">
+                                        <a href=""><span>30</span> отзывов</a>
+                                    </div>
+                                </div>
+                                <div class="catalog-bottom">
+                                    <div class="catalog-bottom__left"><strong class="catalog-number">21</strong> Столов свободно</div>
+                                    <div class="catalog-bottom__btn">
+                                        <button class="btn btn-success btn-sm">зачибучить</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-btn">
+                <button class="btn btn-lg btn-primary">посмотреть на карте</button>
+            </div>
+        </div>
+    </section>
+    <section class="main-section main-section--inverse">
+        <div class="container-fluid">
+            <div class="main-h2 main-h2--inverse clearfix">
+                <div class="pull-left">
+                    <div class="heading-icon">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    </div>
+                    популярные заведения вашего города</div>
+                <div class="slider-arrows pull-right">
+                    <div class="swiper-arrows-holder">
+                    	<div class="swiper-button-next" id="button-next-2">
+                    		<i class="fa fa-angle-right" aria-hidden="true"></i>
+                    	</div>
+                    	<div class="swiper-button-prev" id="button-prev-2">
+                    		<i class="fa fa-angle-left" aria-hidden="true"></i>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-container" id="main-slider-2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="catalog-item">
+                            <div class="catalog-img">
+                                <img src="images/favorite-1.jpg" alt="">
+                            </div>
+                            <div class="catalog-description">
+                                <div class="catalog-heading">44 Favorite Place</div>
+                                <p><strong>Ресторан.</strong> Средний чек: 112 гривен</p>
+                                <p><strong>Адрес:</strong> ул. Пушкинская, 44 – <a href="#">от вас 455 метров</a></p>
+                                <div class="catalog-rating">
+                                    <ul>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        </li>
+                                    </ul>
+                                    <div class="rating-count">
+                                        <a href=""><span>30</span> отзывов</a>
+                                    </div>
+                                </div>
+                                <div class="catalog-bottom">
+                                    <div class="catalog-bottom__left"><strong class="catalog-number">21</strong> Столов свободно</div>
+                                    <div class="catalog-bottom__btn">
+                                        <button class="btn btn-success btn-sm">зачибучить</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="catalog-item">
+                            <div class="catalog-img">
+                                <img src="images/favorite-1.jpg" alt="">
+                            </div>
+                            <div class="catalog-description">
+                                <div class="catalog-heading">44 Favorite Place</div>
+                                <p><strong>Ресторан.</strong> Средний чек: 112 гривен</p>
+                                <p><strong>Адрес:</strong> ул. Пушкинская, 44 – <a href="#">от вас 455 метров</a></p>
+                                <div class="catalog-rating">
+                                    <ul>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        </li>
+                                    </ul>
+                                    <div class="rating-count">
+                                        <a href=""><span>30</span> отзывов</a>
+                                    </div>
+                                </div>
+                                <div class="catalog-bottom">
+                                    <div class="catalog-bottom__left"><strong class="catalog-number">21</strong> Столов свободно</div>
+                                    <div class="catalog-bottom__btn">
+                                        <button class="btn btn-success btn-sm">зачибучить</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="catalog-item">
+                            <div class="catalog-img">
+                                <img src="images/favorite-1.jpg" alt="">
+                            </div>
+                            <div class="catalog-description">
+                                <div class="catalog-heading">44 Favorite Place</div>
+                                <p><strong>Ресторан.</strong> Средний чек: 112 гривен</p>
+                                <p><strong>Адрес:</strong> ул. Пушкинская, 44 – <a href="#">от вас 455 метров</a></p>
+                                <div class="catalog-rating">
+                                    <ul>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        </li>
+                                    </ul>
+                                    <div class="rating-count">
+                                        <a href=""><span>30</span> отзывов</a>
+                                    </div>
+                                </div>
+                                <div class="catalog-bottom">
+                                    <div class="catalog-bottom__left"><strong class="catalog-number">21</strong> Столов свободно</div>
+                                    <div class="catalog-bottom__btn">
+                                        <button class="btn btn-success btn-sm">зачибучить</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="catalog-item">
+                            <div class="catalog-img">
+                                <img src="images/favorite-1.jpg" alt="">
+                            </div>
+                            <div class="catalog-description">
+                                <div class="catalog-heading">44 Favorite Place</div>
+                                <p><strong>Ресторан.</strong> Средний чек: 112 гривен</p>
+                                <p><strong>Адрес:</strong> ул. Пушкинская, 44 – <a href="#">от вас 455 метров</a></p>
+                                <div class="catalog-rating">
+                                    <ul>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        </li>
+                                    </ul>
+                                    <div class="rating-count">
+                                        <a href=""><span>30</span> отзывов</a>
+                                    </div>
+                                </div>
+                                <div class="catalog-bottom">
+                                    <div class="catalog-bottom__left"><strong class="catalog-number">21</strong> Столов свободно</div>
+                                    <div class="catalog-bottom__btn">
+                                        <button class="btn btn-success btn-sm">зачибучить</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-btn">
+                <button class="btn btn-lg btn-default">посмотреть на карте</button>
+            </div>
+        </div>
+    </section>
+    <section class="main-section">
+    	<div class="container-fluid">
+    		<div class="main-h2">
+    			<div class="heading-icon">
+    				<i class="fa fa-fire" aria-hidden="true"></i>
+    			</div>
+    		горячие предложения</div>
+    	</div>
+    </section>
+</main>
 <footer class="footer">
     <div class="footer-top">
         <div class="container-fluid">

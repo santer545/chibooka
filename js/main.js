@@ -6,21 +6,23 @@ $(document).ready(function() {
     // autoheight animation
     animateHeight();
 
-
     // date on searchbar
     datepicker();
 
     // masks 
     inputMasks();
 
+    // google maps
     map();
 
+    // dropdown
     navbarDropdown();
 
-
-
+    // language choose
     languageDropDown();
 
+    // mian page sliders
+    mainPageSliders();
 
 });
 
@@ -157,82 +159,75 @@ function inputMasks() {
 function map() {
     var map1 = $('#map');
     console.log(map1.length)
-    if(map1.length) {
-    var latlng = new google.maps.LatLng("49.9980554", "36.240871");
+    if (map1.length) {
+        var latlng = new google.maps.LatLng("49.9980554", "36.240871");
 
 
-    var popupContent = '<div class="catalog-item map-item"><div class="catalog-img"><img src="images/favorite-1.jpg" alt=""></div><div class="catalog-description"><div class="catalog-heading">44 Favorite Place</div><p><strong>Ресторан.</strong> Средний чек: 112 гривен</p><p><strong>Адрес:</strong> ул. Пушкинская, 44 – <a href="#">от вас 455 метров</a></p><div class="catalog-rating"><ul><li><i class="fa fa-star" aria-hidden="true"></i></li><li><i class="fa fa-star" aria-hidden="true"></i></li><li><i class="fa fa-star" aria-hidden="true"></i></li><li><i class="fa fa-star-o" aria-hidden="true"></i></li><li><i class="fa fa-star-o" aria-hidden="true"></i></li></ul><div class="rating-count"><a href=""><span>30</span> отзывов</a></div></div><div class="catalog-bottom"><div class="catalog-bottom__left"><strong class="catalog-number">21</strong> Столов свободно</div><div class="catalog-bottom__btn"><button class="btn btn-success btn-sm">зачибучить</button></div></div></div></div>';
+        var popupContent = '<div class="catalog-item map-item"><div class="catalog-img"><img src="images/favorite-1.jpg" alt=""></div><div class="catalog-description"><div class="catalog-heading">44 Favorite Place</div><p><strong>Ресторан.</strong> Средний чек: 112 гривен</p><p><strong>Адрес:</strong> ул. Пушкинская, 44 – <a href="#">от вас 455 метров</a></p><div class="catalog-rating"><ul><li><i class="fa fa-star" aria-hidden="true"></i></li><li><i class="fa fa-star" aria-hidden="true"></i></li><li><i class="fa fa-star" aria-hidden="true"></i></li><li><i class="fa fa-star-o" aria-hidden="true"></i></li><li><i class="fa fa-star-o" aria-hidden="true"></i></li></ul><div class="rating-count"><a href=""><span>30</span> отзывов</a></div></div><div class="catalog-bottom"><div class="catalog-bottom__left"><strong class="catalog-number">21</strong> Столов свободно</div><div class="catalog-bottom__btn"><button class="btn btn-success btn-sm">зачибучить</button></div></div></div></div>';
 
-    var myOptions = {
-        zoom: 17,
-        center: latlng,
-        navigationControlOptions: {
-            style: google.maps.NavigationControlStyle.SMALL
-        },
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
+        var myOptions = {
+            zoom: 17,
+            center: latlng,
+            navigationControlOptions: {
+                style: google.maps.NavigationControlStyle.SMALL
+            },
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
 
-    var map = new google.maps.Map(document.getElementById("map"), myOptions);
+        var map = new google.maps.Map(document.getElementById("map"), myOptions);
 
-    map.scrollwheel = false;
+        map.scrollwheel = false;
 
-    map.setOptions({ mapTypeControl: true });
+        map.setOptions({ mapTypeControl: true });
 
-    var image = 'images/marker.png';
-    var marker = new google.maps.Marker({
-        position: latlng,
-        map: map,
-        icon: image
-    });
-
-
+        var image = 'images/marker.png';
+        var marker = new google.maps.Marker({
+            position: latlng,
+            map: map,
+            icon: image
+        });
 
 
-
-
-
-
-
-    var infowindow = new google.maps.InfoWindow({
-        content: popupContent
-    });
-    infowindow.open(map, marker);
-    marker.addListener('click', function() {
+        var infowindow = new google.maps.InfoWindow({
+            content: popupContent
+        });
         infowindow.open(map, marker);
-    });
+        marker.addListener('click', function() {
+            infowindow.open(map, marker);
+        });
 
-    google.maps.event.addListener(infowindow, 'domready', function() {
-        // Reference to the DIV which receives the contents of the infowindow using jQuery
-        var iwOuter = $('.gm-style-iw');
-        $(iwOuter).next().remove();
+        google.maps.event.addListener(infowindow, 'domready', function() {
+            // Reference to the DIV which receives the contents of the infowindow using jQuery
+            var iwOuter = $('.gm-style-iw');
+            $(iwOuter).next().remove();
 
-        /* The DIV we want to change is above the .gm-style-iw DIV.
-         * So, we use jQuery and create a iwBackground variable,
-         * and took advantage of the existing reference to .gm-style-iw for the previous DIV with .prev().
-         */
-        var iwBackground = iwOuter.prev();
+            /* The DIV we want to change is above the .gm-style-iw DIV.
+             * So, we use jQuery and create a iwBackground variable,
+             * and took advantage of the existing reference to .gm-style-iw for the previous DIV with .prev().
+             */
+            var iwBackground = iwOuter.prev();
 
-        iwOuter.parent().parent().css({ left: '300px', top: '300px' });
+            iwOuter.parent().parent().css({ left: '300px', top: '300px' });
 
-        // Remove the background shadow DIV
-        iwBackground.children(':nth-child(2)').css({ 'display': 'none' });
+            // Remove the background shadow DIV
+            iwBackground.children(':nth-child(2)').css({ 'display': 'none' });
 
-        // Remove the white background DIV
-        iwBackground.children(':nth-child(4)').css({ 'display': 'none' });
+            // Remove the white background DIV
+            iwBackground.children(':nth-child(4)').css({ 'display': 'none' });
 
-        // Moves the shadow of the arrow 76px to the left margin 
-        iwBackground.children(':nth-child(1)').attr('style', function(i, s) { return s + 'left: 0px !important;' });
+            // Moves the shadow of the arrow 76px to the left margin 
+            iwBackground.children(':nth-child(1)').attr('style', function(i, s) { return s + 'left: 0px !important;' });
 
-        // Moves the arrow 76px to the left margin 
-        iwBackground.children(':nth-child(3)').find('div').children().remove();
+            // Moves the arrow 76px to the left margin 
+            iwBackground.children(':nth-child(3)').find('div').children().remove();
 
-        // Changes the desired color for the tail outline.
-        // The outline of the tail is composed of two descendants of div which contains the tail.
-        // The .find('div').children() method refers to all the div which are direct descendants of the previous div. 
-        iwBackground.children(':nth-child(3)').find('div').children().remove();
+            // Changes the desired color for the tail outline.
+            // The outline of the tail is composed of two descendants of div which contains the tail.
+            // The .find('div').children() method refers to all the div which are direct descendants of the previous div. 
+            iwBackground.children(':nth-child(3)').find('div').children().remove();
 
 
-    });
+        });
     }
 }
 
@@ -258,19 +253,56 @@ function languageDropDown() {
         });
     });
 
-
     $('.dropdown-menu li a').click(function() {
-        console.log('!!!');
-
         var text = $(this).find('img').attr('src');
-        console.log(text);
         $(this).closest('.lang').find('.dropdown').find('img').attr('src', text);
-        console.log($(this).closest('.lang').find('.dropdown').find('img'));
     });
 
-
-
-
-
     $('.lang').find('.dropdown-menu').find('li:eq(0)').hide();
+}
+
+function mainPageSliders() {
+    var swiper = new Swiper('#main-slider-1', {
+        nextButton: '#button-next-1',
+        prevButton: '#button-prev-1',
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            800: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+            },
+            600: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+            }
+        }
+    });
+
+    var swiper = new Swiper('#main-slider-2', {
+        nextButton: '#button-next-2',
+        prevButton: '#button-prev-2',
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            800: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+            },
+            600: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+            }
+        }
+    });
 }

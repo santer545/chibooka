@@ -74,6 +74,7 @@ gulp.task('scripts', function() {
             sourceDir + '/validate.js',
             sourceDir + '/jquery.maskedinput.js',
             sourceDir + '/jquery.awesome-cursor.js',
+            sourceDir + '/swiper.js',
             sourceDir + '/main.js'
         ])
 

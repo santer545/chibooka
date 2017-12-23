@@ -89,3 +89,43 @@
         }
 	}
 }
+
+.main-heading {
+    @extend .search-heading;
+    position: relative;
+    width: 60%;
+    padding: 0;
+    padding-left: 30px;
+    margin: 8% 0 20px;
+    @include tablet {
+        margin: 20px 0;
+        width: 100%;
+        font-size: 1.23rem;
+        line-height: 1.53rem;
+    }
+    .heading-icon {
+        position: absolute;
+        top: 3px;
+        left: 0;
+        font-size: 2rem;
+    }
+}
+
+.main-h2 {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #522a6b;
+    text-transform: uppercase;
+    .heading-icon {
+        position: absolute;
+        top: -2px;
+        left: 0;
+        font-size: 1.5rem;
+    }
+    &--inverse {
+        color: #fff;
+    }
+}

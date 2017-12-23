@@ -1,0 +1,57 @@
+.main {
+	&-section {
+		position: relative;
+		padding-top: 60px;
+		padding-bottom: 50px;
+		&--inverse {
+			background-color: #522a6b;
+		}
+	}
+	&-search {
+		font-size: 0;
+		[class^="col-"] {
+			display: inline-block;
+			vertical-align: bottom;
+			float: none;
+		}
+		&-wrapper {
+			position: relative;
+			margin-bottom: 20%;
+			@include tablet {
+				margin-bottom: 60px;
+			}
+		}
+	}
+}
+
+
+/*  sliders */
+
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+	top: 20px;
+	right: 0;
+	background-image: none;
+	width: auto;
+	height: auto;
+}
+
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+	top: 20px;
+	left: 0;
+	width: auto;
+	height: auto;
+	background-image: none;
+}
+
+.swiper-arrows-holder {
+	width: 80px;
+	height: 25px;
+	position: relative;
+	&:after {
+		content: '|';
+		position: absolute;
+		left: 37px;
+		top: -2px;
+		bottom: 2px;
+	}
+}

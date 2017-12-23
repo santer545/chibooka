@@ -42,7 +42,7 @@
         }
     }
     &.affix {
-    	height: 38px;
+        height: 38px;
         @include mini-laptop {
             height: 36px;
         }
@@ -67,7 +67,7 @@
             padding-bottom: 10px;
         }
         .navbar:after {
-        	height: 38px;
+            height: 38px;
             @include mini-laptop {
                 height: 36px;
             }
@@ -87,8 +87,20 @@
                 padding-top: 10px;
             }
         }
+    }
+}
 
-
+.main-page {
+    .header-logo {
+        display: none;
+        @include tablet {
+            display: block;
+        }
+    }
+    .logo-main {
+        @include tablet {
+            display: none;
+        }
     }
 }
 
@@ -160,7 +172,7 @@
     ul.dropdown-menu {
         display: none;
         padding-left: 0;
-        border-radius: 0;   
+        border-radius: 0;
         @include tablet {
             padding-top: 0;
         }
