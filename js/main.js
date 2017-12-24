@@ -21,8 +21,19 @@ $(document).ready(function() {
     // language choose
     languageDropDown();
 
-    // mian page sliders
+    // main page sliders
     mainPageSliders();
+
+    // masonry main page
+    masonry();
+
+    // overflow text
+    dots();
+
+    // item like
+    like();
+
+    catalogDetail();
 
 });
 
@@ -158,7 +169,6 @@ function inputMasks() {
 
 function map() {
     var map1 = $('#map');
-    console.log(map1.length)
     if (map1.length) {
         var latlng = new google.maps.LatLng("49.9980554", "36.240871");
 
@@ -305,4 +315,64 @@ function mainPageSliders() {
             }
         }
     });
+}
+
+function masonry() {
+    var $grid = $('.grid').masonry({
+        // options
+
+        // do not use .grid-sizer in layout
+        itemSelector: '.grid-item',
+        percentPosition: true,
+        gutter: 30
+    });
+
+    function onLayout() {
+        console.log('layout done');
+    }
+    $grid.on('layoutComplete', onLayout);
+}
+
+function dots() {
+    $('.grid-text').dotdotdot();
+    $('.blog-text').dotdotdot();
+    $('.resto-share-text').dotdotdot();
+}
+
+function like() {
+    $('.catalog-like').click(function() {
+        $(this).toggleClass('active');
+    });
+}
+
+function catalogDetail() {
+    var catalog = $('.js-catalog-hover'),
+        animateTimeCatalog = 500,
+        catalogHeight = $(catalog).outerHeight(true),
+        catalogHeightResult = -catalogHeight;
+        
+
+        $('.js-catalog-hover').css('height', '0');
+    
+    $('.js-catalog-item').mouseenter(function() {
+        var catalogCurrent = $(this).find('.js-catalog-hover');
+        if (catalogCurrent.height() === 0) {
+            autoHeightAnimate(catalogCurrent, animateTimeCatalog);
+            $(catalogCurrent).addClass('active');
+            $(this).find('.catalog-absolute').css({'transform':'translate(0, '+ catalogHeightResult +'px)'});
+            $(this).find('.catalog-absolute').css('margin-bottom', catalogHeightResult);
+        }
+    });
+    $('.js-catalog-item').mouseleave(function() {
+        var catalogCurrent = $(this).find('.js-catalog-hover');
+        catalogCurrent.stop().animate({ height: '0', opacity: '0' }, animateTimeCatalog);
+        $(this).find('.catalog-absolute').css({'transform':'translate(0,0)'});
+    });
+
+    function autoHeightAnimate(element, time) {
+        var curHeight = element.height(), // Get Default Height
+            autoHeight = element.css('height', 'auto').height(); // Get Auto Height
+        element.height(curHeight); // Reset to Default Height
+        element.stop().animate({ height: autoHeight }, time); // Animate to Auto Height
+    }
 }

@@ -84,8 +84,13 @@
 
 	&--bottom {
 		padding: 22% 0 15px;
+        line-height: 5rem;
         @include mini-laptop {
             padding: 6% 0 15px;
+        }
+        @include mobile {
+            font-size: 2.5rem;
+            line-height: 3rem;
         }
 	}
 }
@@ -128,4 +133,10 @@
     &--inverse {
         color: #fff;
     }
+}
+
+.heading-h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 10px;
 }

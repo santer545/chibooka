@@ -17,9 +17,33 @@
             }
         }
     }
+    &-like {
+        position: absolute;
+        top: -26px;
+        right: 30px;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background-color: #e94f1b;
+        color: #fff;
+        opacity: 0;
+        cursor: pointer;
+        transition: opacity 0.3s;
+        &.active {
+            opacity: 1;
+        }
+        i {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5rem;
+        }
+    }
     &-item {
         border-radius: 5px;
         margin-bottom: 30px;
+        
         &.map-item {
             margin: 0 0 -2px;
             &:after {
@@ -38,12 +62,56 @@
                 border: none;
             }
         }
+        &:hover {
+            .catalog-like {
+                opacity: 1;
+                &.active {
+                    opacity: 1;
+                }
+            }
+        }
     }
+    &-hover {
+        overflow: hidden;
+        &.active {
+            opacity: 1!important;
+        }
+    }
+    &-promo {
+        position: relative;
+        margin-top: 30px;
+        padding-left: 70px;
+        .promo-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: #522a6b;
+            color: #fff;
+            i {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                font-size: 1.3rem;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    &-absolute {
+        transition: transform 0.5s;
+        background-color: #fff;
+    }
+
     &-description {
+        position: relative;
         padding: 28px 28px 32px;
         border: 1px solid #e5e5e5;
         border-radius: 0 0 5px 5px;
         background-color: #fff;
+        transition: margin-top 0.5s;
         @include tablet {
             padding: 15px;
         }
@@ -102,6 +170,7 @@
             }
         }
         &__btn {
+            position: relative;
             width: 50%;
             display: inline-block;
             vertical-align: bottom;
@@ -111,11 +180,32 @@
                 width: 100%;
                 text-align: center;
             }
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: -7px;
+                right: -10px;
+                width: 50px;
+                height: 54px;
+                background-image: url('../images/btn-bg.png');
+                background-repeat: no-repeat;
+                background-size: 50px 54px;
+                transform: scale(0);
+                transition: transform 0.3s;
+            }
             .btn {
                 display: inline-block;
                 vertical-align: middle;
                 width: 140px;
                 padding: 9px 20px;
+            }
+            &:hover {
+                &:after {
+                    transform: scale(1);
+                }
+                .btn {
+                    text-align: left;
+                }
             }
         }
     }
@@ -166,4 +256,12 @@
         font-size: 0.94rem;
         font-weight: 600;
     }
+}
+
+.rating-value {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.38rem;
+    color: #e94f1b;
+    margin-right: 20px;
 }

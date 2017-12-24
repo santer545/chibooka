@@ -76,6 +76,12 @@
     }
 }
 
+textarea.form-control {
+    padding-top: 17px;
+    height: 115px;
+    resize: none;
+}
+
 .custom-checkbox {
     position: relative;
     color: #949596;
@@ -152,15 +158,13 @@
             display: inline-block;
             vertical-align: middle;
             margin-right: 10px;
-            &:after {
-                display: none;
-            }
+            
         }
         input[type="checkbox"] {
             display: none;
             &:checked {
                 &+.fake-checkbox {
-                    background-color: #522a6b;
+                    
                 }
             }
         }
