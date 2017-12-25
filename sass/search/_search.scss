@@ -18,6 +18,9 @@
         text-align: center;
         cursor: pointer;
         z-index: 1;
+        i {
+            margin-right: 10px;
+        }
     }
     &-holder {
         @include clearfix;
