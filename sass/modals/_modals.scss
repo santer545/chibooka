@@ -100,6 +100,9 @@
         left: -44px;
         font-size: 2.07rem;
     }
+    &--relative {
+        position: relative;
+    }
 }
 
 
@@ -194,5 +197,52 @@
     text-decoration: underline;
     &:hover {
         text-decoration: none;
+    }
+}
+
+.bron {
+    &-top {
+        @include clearfix;
+        padding-bottom: 30px;
+    }
+    &-img {
+        width: 165px;
+        float: left;
+    }
+    &-text {
+        width: calc(100% - 165px);
+        padding-left: 30px;
+        float: left;
+    }
+    &-heading {
+        font-size: 1.38rem;
+        font-weight: 700;
+    }
+    &-rating {
+        @extend .catalog-rating;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    &-form-heading {
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    &-info {
+        p {
+            margin-bottom: 5px;
+        }
+    }
+    &-bottom {
+        a {
+            color: #e94f1b;
+        }
+        margin-bottom: 40px;
+    }
+    &-btn {
+        padding-bottom: 50px;
+        .btn {
+            width: 165px;
+            margin-right: 20px;
+        }
     }
 }

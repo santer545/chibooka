@@ -35,6 +35,8 @@ $(document).ready(function() {
 
     catalogDetail();
 
+    bron ();
+
 });
 
 function mobileNavbar() {
@@ -390,4 +392,10 @@ function catalogDetail() {
         element.height(curHeight); // Reset to Default Height
         element.stop().animate({ height: autoHeight }, time); // Animate to Auto Height
     }
+}
+
+function bron () {
+    $('#bron').find('a[data-toggle]').click(function () {
+        $(this).closest('#bron').modal('hide');
+    });
 }

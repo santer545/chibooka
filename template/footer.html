@@ -381,6 +381,92 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="bron" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title modal-title--relative">
+                Бронирование столика
+                    <div class="heading-icon">
+                        <i class="fa fa-bookmark" aria-hidden="true"></i>
+                    </div>
+            </h4>
+            </div>
+            <div class="modal-body">
+                <!-- Tab panes -->
+                <div class="bron-top">
+                    <div class="bron-img">
+                        <img src="images/bron-1.jpg" alt="">
+                    </div>
+                    <div class="bron-text">
+                        <div class="bron-heading">44 Favorite Place</div>
+                        <div class="bron-rating">
+                            <ul>
+                                <li>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bron-info">
+                            <p><strong>Дата брони:</strong> 12.12.17 </p>
+                            <p><strong>Время брони:</strong> 21:15</p>
+                            <p><strong>Количество человек:</strong> 2 человека</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bron-form">
+                    <div class="bron-form-heading">Заказчик</div>
+                    <form action="" class="form js_validate">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" required placeholder="Имя">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" required placeholder="Фамилия">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" required placeholder="Email" data-validate="email">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" required placeholder="Телефон" data-validate="phone">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="" id="" class="form-control" placeholder="Комментарий"></textarea>
+                        </div>
+                        <div class="bron-bottom">
+                            <a data-toggle="modal" data-target="#authorize" role="button">Создать аккаунт</a> или <a data-toggle="modal" data-target="#authorize" role="button">Войти</a>
+                        </div>
+                        <div class="bron-btn">
+                            <button class="btn btn-primary" data-dismiss="modal">Отмена</button>
+                            <button class="btn btn-success" type="submit">забронировать</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="js/all.min.js"></script>
 </body>
 
