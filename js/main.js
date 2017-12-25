@@ -203,7 +203,7 @@ function map() {
         var infowindow = new google.maps.InfoWindow({
             content: popupContent
         });
-        infowindow.open(map, marker);
+        /*infowindow.open(map, marker);*/
         marker.addListener('click', function() {
             infowindow.open(map, marker);
         });
