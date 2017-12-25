@@ -33,6 +33,16 @@
             .form-control--transparent {
                 background-color: #f7f8f7;
             }
+            .bootstrap-select>.dropdown-toggle {
+                background-color: transparent;
+                padding-top: 3px;
+                .caret {
+                    right: 0;
+                    @include mobile {
+                        right: -4px;
+                    }
+                }
+            }
         }
     }
     &-navbar {
@@ -261,6 +271,9 @@
         padding: 60px 9999px 30px;
         margin: 0 -9999px;
         background-color: #f7f8f7;
+        @include mobile {
+            padding: 30px 9999px 0;
+        }
     }
     &-right {
         padding: 30px;
@@ -357,9 +370,18 @@
         padding-top: 0;
         padding-bottom: 0;
         margin-bottom: 15px;
+        @include mobile {
+            text-align: left;
+        }
     }
     &-img {
+        position: relative;
     	display: block;
+        &:hover {
+            .zoom-icon {
+                visibility: visible;
+            }
+        }
     	@include mobile {
     		text-align: center;
     		margin-bottom: 10px;
@@ -391,6 +413,9 @@
         }
         .table {
         	margin-bottom: 45px;
+            @include mobile {
+                margin-bottom: 25px;
+            }
         }
         .table>tbody>tr>td,
         .table>tbody>tr>th,
@@ -503,4 +528,11 @@
     right: 0;
     text-align: right;
     top: 0;
+}
+
+.table-responsive {
+    @include mobile {
+        border: none;
+        margin-bottom: 20px;
+    }
 }

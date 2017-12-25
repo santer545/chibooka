@@ -18,6 +18,9 @@
     		margin-top: 0;
     		padding-top: 35px;
     	}
+        @include mobile {
+            text-align: center;
+        }
     	img {
     		border-radius: 5px;
     	}

@@ -28,6 +28,7 @@
         color: #fff;
         opacity: 0;
         cursor: pointer;
+        z-index: 3;
         transition: opacity 0.3s;
         &.active {
             opacity: 1;
@@ -103,6 +104,15 @@
     &-absolute {
         transition: transform 0.5s;
         background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: -1px;
+        right: -1px;
+        padding: 28px 28px 0;
+        z-index: 2;
+        border: 1px solid #e5e5e5;
+        border-bottom: none;
+        border-top: none;
     }
 
     &-description {
@@ -215,11 +225,13 @@
     }
 
     &-rating {
-        padding-top: 48px;
         padding-bottom: 22px;
         @include tablet {
             padding-top: 10px;
             padding-bottom: 15px;
+        }
+        @include mobile {
+            text-align: center;
         }
         ul {
             list-style-type: none;

@@ -58,6 +58,9 @@
                 .caret {
                     top: 25%;
                     right: 12px;
+                    @include mobile {
+                        right: -3px;
+                    }
                 }
             }
         }
@@ -98,6 +101,9 @@
                     padding: 15px 20px;
                 }
             }
+        }
+        .input-group {
+            width: 100%;
         }
     }
     &-icon {
@@ -404,6 +410,7 @@
 }
 
 .bootstrap-select.btn-group .dropdown-toggle .caret {
+    right: 16px;
     margin-top: -2px;
 }
 
