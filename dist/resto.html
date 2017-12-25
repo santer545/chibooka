@@ -47,7 +47,7 @@
                                     <li><a href="#">F.A.Q</a></li>
                                 </ul>
                                 <div class="header-right">
-                                    <div href="#" class="lang">
+                                    <div class="lang">
                                         
                                         <a class="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                             <img src="images/lang-1.jpg" alt="">
@@ -97,14 +97,27 @@
             </div>
         </header>
 <div class="banner" style="background-image: url(images/header-bg.jpg)">
+	<div class="banner-bottom-line">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="banner-navbar blog-navbar">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
                 <div class="banner-navbar banner-navbar--resto">
                 </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <div class="heading-h1 heading-h1--bottom">
+                	<div class="resto-like-icon">
+                		<i class="fa fa-heart" aria-hidden="true"></i>
+                	</div>
                     Баркас. Fish&Grill на Владимирской
                 </div>
             </div>
@@ -329,6 +342,12 @@
                         </div>
                         <div class="resto-right-block">
                             <strong>Адрес:</strong> ул. Пушкинская, 44
+                        </div>
+                        <div class="resto-right-block">
+                            <strong>Средний чек:</strong> 112 грн.
+                        </div>
+                        <div class="resto-right-block">
+                            <strong>Вебсайт:</strong> <a href="gladhead.com" target="_blank">www.gladhead.com</a>
                         </div>
                     </div>
                 </div>
@@ -668,6 +687,9 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="review-load">
+                            	<span>загрузить</span><img src="images/load.png" alt=""><span>больше</span>
+                            </div>
                         </div>
                         <div class="review-box">
                             <div class="review-heading">Оставить свой отзыв о заведении</div>
@@ -687,7 +709,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control" name="" id="" placeholder="Ваш комментарий"></textarea>
+                                    <textarea class="form-control" name="comment" id="comment" placeholder="Ваш комментарий"></textarea>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-6">
@@ -714,7 +736,7 @@
                                     </div>
                                     <div class="col-xs-6 text-right">
                                         <label class="fileContainer btn btn-primary">
-                                            Загрузить
+                                            Загрузить фото
                                             <input type="file" multiple />
                                         </label>
                                     </div>
@@ -1359,7 +1381,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <textarea name="" id="" class="form-control" placeholder="Комментарий"></textarea>
+                            <textarea name="comment-1" id="comment-1" class="form-control" placeholder="Комментарий"></textarea>
                         </div>
                         <div class="bron-bottom">
                             <a data-toggle="modal" data-target="#authorize" role="button">Создать аккаунт</a> или <a data-toggle="modal" data-target="#authorize" role="button">Войти</a>
