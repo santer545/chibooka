@@ -249,3 +249,7 @@ textarea.form-control {
         }
     }
 }
+
+.input-group.date .form-control {
+    text-overflow: ellipsis;
+}

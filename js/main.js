@@ -3,7 +3,10 @@ $(document).ready(function() {
     // navbar mobile
     mobileNavbar();
 
-    
+    animateHeight();
+
+    searchHeight(popup);
+
 
     // date on searchbar
     datepicker();
@@ -34,7 +37,7 @@ $(document).ready(function() {
 
     catalogDetail();
 
-    bron ();
+    bron();
 
 });
 
@@ -52,22 +55,22 @@ function customSelect() {
 
 }
 
-$(window).on('load resize orientationchange', animateHeight);
+
 
 function animateHeight() {
 
-    var nav = $('.js-popup'),
+    /*var nav = $('.js-popup'),
         animateTime = 500,
         navLink = $('.js-popup-link');
     navLink.click(function() {
         if (nav.height() === 0) {
-            autoHeightAnimate(nav, animateTime);
+            autoHeightAnimatePopup(nav, animateTime);
             $(nav).css({ 'opacity': '1', 'border-top': '1px solid #fafaf7' });
 
         } else {
             nav.stop().animate({ height: '0', opacity: '0' }, animateTime);
         }
-    });
+    });*/
 
     var nav1 = $('.js-modal-bottom'),
         animateTime1 = 500,
@@ -121,12 +124,44 @@ function animateHeight() {
 
     /* Function to animate height: auto */
     function autoHeightAnimate(element, time) {
-        var curHeight = element.height(), // Get Default Height
-            autoHeight = element.css('height', 'auto').height(); // Get Auto Height
-        element.height(curHeight); // Reset to Default Height
-        element.stop().animate({ height: autoHeight }, time); // Animate to Auto Height
+        var curHeight = element.height();
+        var autoHeight = element.css('height', 'auto').height();
+        element.height(curHeight);
+        element.stop().animate({ height: autoHeight }, time);
+    }
+
+    function autoHeightAnimatePopup(element, time) {
+        var curHeight = element.height();
+        var autoHeight = element.css('height', 'auto').height();
+        element.height(popup);
+        element.stop().animate({ height: autoHeight }, time);
     }
 }
+
+
+var popup = $('.js-search-result').height();
+
+window.addEventListener("orientationchange", function() {
+    var popup_orient = $('.js-search-result').height();
+    searchHeight(1000);
+}, false);
+
+function searchHeight(height) {
+     var navLink = $('.js-popup-link');
+
+        navLink.click(function() {
+        if ($('.js-popup').height() === 0) {
+            $('.js-popup').addClass('active');
+            $('.js-popup').height(popup);
+            height = $('.js-popup').height();
+            $('.js-popup').css('opacity', '1');
+        } else {
+            $('.js-popup').removeClass('active');
+            $('.js-popup').css('opacity', '0');
+        }
+    });
+}
+
 
 function datepicker() {
     $('#datetimepicker1').datetimepicker({
@@ -346,7 +381,6 @@ function masonry() {
     });
 
     function onLayout() {
-        console.log('layout done');
     }
     $grid.on('layoutComplete', onLayout);
 }
@@ -395,8 +429,8 @@ function catalogDetail() {
     }
 }
 
-function bron () {
-    $('#bron').find('a[data-toggle]').click(function () {
+function bron() {
+    $('#bron').find('a[data-toggle]').click(function() {
         $(this).closest('#bron').modal('hide');
     });
 }

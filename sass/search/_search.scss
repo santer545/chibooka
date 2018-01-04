@@ -159,6 +159,7 @@
         border-top: none;
         border-radius: 0 0 5px 5px;
         margin: -1px 15px 0;
+        transition: height 0.5s;
         @include tablet {
             margin: 0 15px;
             padding-right: 15px;
@@ -388,7 +389,7 @@
         }
     }
     .bootstrap-select.btn-group .dropdown-toggle .caret {
-        @include mobile {
+        @include tablet {
             right: 0;
         }
     }
