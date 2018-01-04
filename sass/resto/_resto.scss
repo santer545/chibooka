@@ -59,6 +59,11 @@
                     }
                 }
             }
+            .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) .dropdown-menu {
+                max-width: none;
+                width: 150px;   
+                
+            }
         }
     }
     &-navbar {
@@ -232,6 +237,11 @@
             float: left;
             width: 165px;
             margin-top: 7px;	
+            img {
+                @include mobile {
+                    width: 100%;    
+                }
+            }
             @include mobile {
             	width: 100%;
             	float: none;
@@ -267,17 +277,14 @@
         display: block;
         padding: 30px 25px;
         border-radius: 5px;
-        transition: background-color 0.3s;
-        cursor: pointer;
         .catalog-heading {
         	padding-bottom: 15px;
         	margin-bottom: 15px;
         }
         @include mini-laptop {
-        	background-color: #f7f8f7;
         	margin-top: 20px;
         }
-        &:hover {
+        &--inverse {
             text-decoration: none;
             background-color: #f7f8f7;
         }
@@ -285,7 +292,7 @@
             width: 70%;
             padding-right: 30px;
             margin: 0 -7.5px;
-            @include mobile {
+            @include tablet {
             	width: 100%;
             	padding-right: 0;
             	margin: 0;
@@ -377,9 +384,10 @@
         width: 70%;
         padding-right: 30px;
         margin: 0 -8px;
-        @include mobile {
+        @include tablet {
         	width: 100%;
         	padding-right: 0;
+            margin: 0;  
         }
     }
     &-item {
@@ -408,7 +416,7 @@
         padding-top: 0;
         padding-bottom: 0;
         margin-bottom: 15px;
-        @include mobile {
+        @include tablet {
             text-align: left;
         }
     }
@@ -424,6 +432,11 @@
     		text-align: center;
     		margin-bottom: 10px;
     	}
+        img {
+            @include mobile {
+                width: 100%;    
+            }
+        }
     }
     &-table {
         width: 70%;
@@ -432,6 +445,10 @@
         margin: 0 -8px;
         @include mini-laptop {
         	width: 90%;
+        }
+        @include tablet {
+            margin: 0;  
+            width: 100%;    
         }
         @include mobile {
         	padding-right: 0;
@@ -525,9 +542,10 @@
         padding-right: 30px;
         padding-bottom: 50px;
         margin: 0 -8px;
-        @include mobile {
+        @include tablet {
         	width: 100%;
         	padding-right: 0;
+            margin: 0;  
         	padding-bottom: 20px;
         }
         .btn-success {
@@ -580,6 +598,9 @@
     position: relative;
     padding: 10px 25px;
     margin: -6px -6px 0 0;
+    @include tablet {
+        margin-right: 0;    
+    }
 }
 
 .fileContainer [type=file] {

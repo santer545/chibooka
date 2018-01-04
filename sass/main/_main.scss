@@ -25,6 +25,9 @@
             display: inline-block;
             vertical-align: bottom;
             float: none;
+            @include tablet {
+                display: block;
+            }
         }
         &-wrapper {
             position: relative;

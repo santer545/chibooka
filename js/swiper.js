@@ -7235,7 +7235,7 @@ var EffectCoverflow = {
 
 // Swiper Class
 // Core Modules
-Swiper$1.use([
+if (typeof Swiper$1.use !== 'undefined') Swiper$1.use([
   Device$2,
   Support$2,
   Browser$2,
@@ -7260,6 +7260,33 @@ Swiper$1.use([
   EffectFlip,
   EffectCoverflow
 ]);
+else Swiper$1.Class.use([
+  Device$2,
+  Support$2,
+  Browser$2,
+  Resize,
+  Observer$1,
+  Virtual$1,
+  Keyboard$1,
+  Mousewheel$1,
+  Navigation$1,
+  Pagination$1,
+  Scrollbar$1,
+  Parallax$1,
+  Zoom$1,
+  Lazy$1,
+  Controller$1,
+  A11y,
+  History$1,
+  HashNavigation$1,
+  Autoplay$1,
+  EffectFade,
+  EffectCube,
+  EffectFlip,
+  EffectCoverflow
+]);
+
+
 
 return Swiper$1;
 

@@ -164,7 +164,9 @@
         }
     }
     &-bottom {
-
+        @include tablet {
+            text-align: center;
+        }
         font-size: 0;
         &__left {
             font-size: 0.94rem;
@@ -189,8 +191,7 @@
             vertical-align: bottom;
             text-align: right;
             @include tablet {
-                display: block;
-                width: 100%;
+                width: auto;
                 text-align: center;
             }
             &:after {

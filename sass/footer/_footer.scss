@@ -5,29 +5,29 @@
         background-color: #522a6b;
         color: #fff;
         @include tablet {
-        	padding: 30px 0;
+            padding: 30px 0;
         }
         @include mobile {
-        	text-align: center;
+            text-align: center;
         }
     }
     &-logo {
-        padding-left: 6px;   
-    	display: block;
-    	@include mobile {
-    		text-align: center;
-    		padding-bottom: 30px;
-    	}
+        padding-left: 6px;
+        display: block;
+        @include mobile {
+            text-align: center;
+            padding-bottom: 30px;
+        }
     }
     &-menu {
         list-style-type: none;
         padding: 0;
         margin: 0;
         @include mobile {
-        	margin-bottom: 30px;
+            margin-bottom: 30px;
         }
         li {
-            line-height: 1.2;   
+            line-height: 1.2;
             &:not(:last-child) {
                 margin-bottom: 6px;
             }
@@ -42,10 +42,10 @@
         padding: 25px 0;
         background-color: #f7f8f7;
         @include tablet {
-        	padding: 0 0 10px;
+            padding: 0;
         }
         @include mobile {
-        	text-align: center;
+            text-align: center;
         }
         a {
             font-weight: 600;
@@ -54,22 +54,27 @@
     }
     &-info {
         text-align: right;
+        @include tablet {
+            text-align: center;
+        }
         @include mobile {
-        	text-align: center;
-        	padding-top: 10px;
+            text-align: center;
         }
     }
     &-subscribe {
-    	@include tablet {
-    		padding-top: 30px;
-    		clear: both;
-    	}
-    	@include mobile {
-    		padding-top: 0;
-    	}
+        @include tablet {
+            padding-top: 30px;
+            margin: 0 -15px;
+            clear: both;
+            @include clearfix;
+        }
+        @include mobile {
+            padding-top: 0;
+            margin: 0;
+        }
         .btn-sm {
             width: 100%;
-            padding: 9px 20px;  
+            padding: 9px 20px;
         }
         .form-control {
             font-size: 0.92rem;
@@ -88,48 +93,65 @@
             }
         }
         .form-group {
-        	@include tablet {
-        		margin-bottom: 0;
-        	}
-        	&:first-child {
-        		margin-bottom: 11px;
-        		@include mini-laptop {
-        			margin-bottom: 10px;	
-        		}
-        		@include tablet {
-        			margin-bottom: 0;
-        		}
+            @include tablet {
+                margin-bottom: 0;
+                float: left;
+                padding: 0 15px;
+                width: 50%;
+            }
+            @include mobile {
+                width: 100%;
+                float: none;
+                margin-bottom: 10px;
+            }
+            &:first-child {
+                margin-bottom: 11px;
+                @include mini-laptop {
+                    margin-bottom: 10px;
+                }
+                @include tablet {
+                    margin-bottom: 0;
+                }
                 @include mobile {
                     margin-bottom: 10px;
                 }
-        	}
+            }
         }
     }
     &-social {
         list-style-type: none;
-        padding: 16px 0 0 1px; 
-        margin: 0; 
+        padding: 16px 0 0 1px;
+        margin: 0;
         @include mobile {
             padding: 0 0 30px;
         }
         li {
-            display: inline-block;  
-            vertical-align: middle; 
+            display: inline-block;
+            vertical-align: middle;
             &:not(:last-child) {
-                margin-right: 27px; 
+                margin-right: 27px;
             }
             a {
-                display: block; 
+                display: block;
                 color: #fff;
-                font-size: 1rem;    
+                font-size: 1rem;
             }
         }
     }
 }
 
 .copyright {
-	@include tablet {
-		padding: 10px 0;
-		text-align: center;
-	}
+    @include tablet {
+        padding: 10px 0;
+        text-align: center;
+    }
+    &~div {
+        @include tablet {
+            text-align: center;
+            padding: 10px 0;
+        }
+        @include mobile {
+            padding-top: 0;
+        }
+    }
 }

@@ -1,6 +1,10 @@
 .blog {
 	padding-top: 80px;
 	padding-bottom: 7%;
+	@include mobile {
+		padding-top: 40px;	
+		padding-bottom: 30px;	
+	}
 	.blog-item {
 		margin-bottom: 30px;
 		.catalog-img {
@@ -21,6 +25,22 @@
 			background-color: #522a6b;
 		}
 	}
+	&-list {
+		font-size: 0;	
+		[class^="col-"] {
+			display: inline-block;	
+			vertical-align: top;	
+			float: none;	
+			@include mobile {
+				display: block;	
+			}
+		}
+		
+	}
+	&-text,
+	&-date {
+		font-size: 1rem;	
+	}
 }
 
 .banner-bottom-line {
@@ -33,12 +53,19 @@
 
 .pagination {
 	margin: 0;
+	@include mobile {
+		text-align: center;
+	}
 }
 
 .pagination-left {
 	display: inline-block;
 	vertical-align: middle;
 	margin-right: 70px;
+	@include mobile {
+		margin-right: 0;	
+		padding-bottom: 20px;	
+	}
 }
 
 .pagination-right {
@@ -74,6 +101,9 @@
 	width: 120px;
 	overflow: hidden;
 	font-size: 1.5rem;
+	@include mobile {
+		display: block;	
+	}
 	&:after {
 		content: '|';
 		position: absolute;

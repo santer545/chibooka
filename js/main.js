@@ -3,8 +3,7 @@ $(document).ready(function() {
     // navbar mobile
     mobileNavbar();
 
-    // autoheight animation
-    animateHeight();
+    
 
     // date on searchbar
     datepicker();
@@ -52,6 +51,8 @@ function customSelect() {
     });
 
 }
+
+$(window).on('load resize orientationchange', animateHeight);
 
 function animateHeight() {
 

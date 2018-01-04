@@ -115,6 +115,9 @@
     &-navbar {
         min-height: 70px;
         background-color: #522a6b;
+        @include mini-laptop {
+            min-height: 0;
+        }
         @include mobile {
             display: none;
         }

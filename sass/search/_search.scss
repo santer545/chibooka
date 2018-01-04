@@ -22,7 +22,7 @@
             color: #fff;
         }
         @include mobile {
-            bottom: -65px;
+            bottom: -83px;
         }
         i {
             margin-right: 10px;
@@ -79,7 +79,7 @@
                 border-radius: 0;
             }
             @include mobile {
-                margin-bottom: -11px;
+                margin-bottom: 0;
             }
         }
 
@@ -96,6 +96,8 @@
             text-transform: none;
             @include tablet {
                 border-radius: 0;
+                text-transform: uppercase;
+                font-size: 0.83rem;
             }
             @include mobile {
                 height: auto;
@@ -153,11 +155,34 @@
         height: 0;
         opacity: 0;
         background-color: #fdfdfd;
-        /* border-top: 1px solid #fafaf7; */
+        border: 1px solid #f2f2f2;
+        border-top: none;
         border-radius: 0 0 5px 5px;
         margin: -1px 15px 0;
         @include tablet {
             margin: 0 15px;
+            padding-right: 15px;
+        }
+        .row {
+            @include tablet {
+                font-size: 0;
+            }
+        }
+
+        [class^="col-"] {
+            @include tablet {
+                display: inline-block;
+                float: none;
+                vertical-align: top;
+            }
+            &:last-child {
+                .search-popup__item {
+                    padding-right: 40px;
+                    @include tablet {
+                        padding-right: 0;
+                    }
+                }
+            }
         }
 
         &__item {
@@ -175,16 +200,20 @@
         &__bottom {
             text-align: right;
             padding: 50px 20px 55px 0;
+            @include tablet {
+                text-align: center;
+                padding-right: 0;
+                margin-right: -15px;
+            }
             .btn {
                 margin-left: 30px;
                 width: 165px;
-                @include mobile {
-                    width: 100%;
-                    margin-left: 10px;
+                @include tablet {
+                    width: 90%;
+                    margin-left: 0;
+                    display: block;
+                    margin: 0 auto 10px;
                 }
-            }
-            @include tablet {
-                padding-right: 20px;
             }
         }
     }
@@ -212,12 +241,11 @@
         position: relative;
         background-color: #522a6b;
         border-radius: 0 5px 5px 0;
-        min-height: 70px;
         @include clearfix;
         text-align: right;
         padding-right: 20px;
-        padding-top: 21px;
-        padding-bottom: 21px;
+        /* padding-top: 21px;
+        padding-bottom: 21px; */
         @include tablet {
             border-radius: 0;
             text-align: center;
@@ -226,6 +254,9 @@
         }
     }
     &-icons {
+        @include mobile {
+            margin-top: 26px;
+        }
         ul {
             list-style-type: none;
             padding: 0;
@@ -295,8 +326,8 @@
     .bootstrap-select>.dropdown-toggle {
         background-color: transparent;
         border: none;
-        padding-top: 0;
-        padding-bottom: 0;
+        padding-top: 21px;
+        padding-bottom: 21px;
         padding-left: 0;
         &:hover,
         &:focus,
@@ -333,6 +364,34 @@
     .open>.btn-default.dropdown-toggle:hover {
         background-color: transparent;
     }
+    .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) .dropdown-menu {
+        max-width: none;
+        width: 250px;
+        left: -125px;
+        border-radius: 0;
+        margin-top: 0;
+        border-top: none;
+        .selected {
+            a {
+                background-color: #522a6b;
+                color: #fff;
+            }
+        }
+        a {
+            color: #522a6b;
+            padding: 10px 20px;
+            transition: background-color 0.3s, color 0.3s;
+            &:hover {
+                color: #fff;
+                background-color: #522a6b;
+            }
+        }
+    }
+    .bootstrap-select.btn-group .dropdown-toggle .caret {
+        @include mobile {
+            right: 0;
+        }
+    }
 }
 
 
@@ -368,6 +427,10 @@
             }
         }
     }
+    .bootstrap-select.btn-group .dropdown-menu li a span.text {
+        font-size: 1rem;
+    }
+    
 }
 
 
@@ -443,7 +506,7 @@
 }
 
 .bootstrap-select.btn-group .dropdown-toggle .caret {
-    right: 16px;
+    right: 18px;
     margin-top: -2px;
 }
 
@@ -570,4 +633,7 @@
     color: #522a6b;
     font-size: 1rem;
     margin-left: 20px;
+    @include tablet {
+        margin-left: 0;
+    }
 }
