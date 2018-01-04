@@ -320,6 +320,9 @@
         display: inline-block;
         width: 36%;
         vertical-align: middle;
+        @include mini-laptop {
+            width: 45%; 
+        }
         @include tablet {
             width: auto;
         }
