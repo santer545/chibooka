@@ -39,6 +39,8 @@ $(document).ready(function() {
 
     bron();
 
+    getFileName();
+
 });
 
 function mobileNavbar() {
@@ -147,9 +149,9 @@ window.addEventListener("orientationchange", function() {
 }, false);
 
 function searchHeight(height) {
-     var navLink = $('.js-popup-link');
+    var navLink = $('.js-popup-link');
 
-        navLink.click(function() {
+    navLink.click(function() {
         if ($('.js-popup').height() === 0) {
             $('.js-popup').addClass('active');
             $('.js-popup').height(popup);
@@ -380,8 +382,7 @@ function masonry() {
         gutter: 30
     });
 
-    function onLayout() {
-    }
+    function onLayout() {}
     $grid.on('layoutComplete', onLayout);
 }
 
@@ -405,9 +406,10 @@ function catalogDetail() {
 
 
     $('.js-catalog-hover').css('height', '0');
-    $('.catalog-rating').css('padding-top', (catalogHeight - 4));
+    $('.catalog-rating').css('padding-top', (catalogHeight + 30));
 
     $('.js-catalog-item').mouseenter(function() {
+        $(this).addClass('hover');
         var catalogCurrent = $(this).find('.js-catalog-hover');
         if (catalogCurrent.height() === 0) {
             autoHeightAnimate(catalogCurrent, animateTimeCatalog);
@@ -416,13 +418,16 @@ function catalogDetail() {
         }
     });
     $('.js-catalog-item').mouseleave(function() {
+        $(this).removeClass('hover');
+        $(this).find('.js-catalog-hover').removeClass('active');
         var catalogCurrent = $(this).find('.js-catalog-hover');
         catalogCurrent.stop().animate({ height: '0', opacity: '0' }, animateTimeCatalog);
         $(this).find('.catalog-absolute').css({ 'transform': 'translate(0,0)' });
+
     });
 
     function autoHeightAnimate(element, time) {
-        var curHeight = element.height(), // Get Default Height
+        var curHeight = element.height() + 30, // Get Default Height
             autoHeight = element.css('height', 'auto').height(); // Get Auto Height
         element.height(curHeight); // Reset to Default Height
         element.stop().animate({ height: autoHeight }, time); // Animate to Auto Height
@@ -432,5 +437,19 @@ function catalogDetail() {
 function bron() {
     $('#bron').find('a[data-toggle]').click(function() {
         $(this).closest('#bron').modal('hide');
+    });
+}
+
+function getFileName() {
+    $('.fileContainer [type=file]').on('change', function() {
+        for (var i = 0; i < this.files.length; i++) {
+            var text = this.files[i].name;
+            $('.js-file-name').removeClass('hidden');
+            $('.js-file-name').append('<p class="alert alert-success">' + text + '<span class="js-fileName-remove"><i class="fa fa-times-circle" aria-hidden="true"></i></span></p>');
+        }
+    });
+
+    $(document).on('click', '.js-fileName-remove', function() {
+        $(this).closest('p').remove();
     });
 }

@@ -1,18 +1,17 @@
 //= header.html
-
-<div class="banner" style="background-image: url(images/header-bg.jpg)">
+<div class="banner" style="background-image: url(http://chibooka.myapp.com.ua/images/header-bg.jpg)">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
             </div>
             <div class="col-md-8">
                 <div class="heading-h1 heading-h1--bottom">
-                    Избранное
+                    Мои данные
                 </div>
                 <div class="banner-navbar">
                     <ul class="banner-menu">
-                        <li><a href="#">Мои данные</a></li>
-                        <li><a href="#">Избранное</a></li>
+                        <li><a href="http://chibooka.myapp.com.ua/profile/client">Мои данные</a></li>
+                        <li><a href="http://chibooka.myapp.com.ua/profile/favourite">Избранное</a></li>
                         <li><a href="#">История бронирований</a></li>
                         <li><a href="#">Мои предложения</a></li>
                         <li><a href="#">Уведомления</a></li>
@@ -22,66 +21,99 @@
         </div>
     </div>
 </div>
-
 <section class="cabinet">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-3">
-				<div class="cabinet-img">
-					<img src="images/man.png" alt="">
-				</div>
-			</div>
-			<div class="col-sm-7">
-				<div class="cabinet-form">
-					<form action="#" class="form js_form">
-						<div class="error-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet accusamus odit exercitationem, autem similique excepturi, ut asperiores cumque eaque quibusdam sequi eius praesentium obcaecati minima ipsa reiciendis voluptatum maxime iusto necessitatibus ratione labore, harum. Atque aperiam quisquam esse reprehenderit repellendus!</div>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<input type="text" required placeholder="Ваша фамилия" class="form-control">
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<input type="text" required placeholder="Ваше имя" class="form-control">
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<input type="email" required placeholder="Ваш email" data-validate="email" class="form-control">
-								</div>
-							</div>
-							
-							<div class="col-md-6">
-								<div class="form-group form-group--relative">
-									<select name="city_id" class="selectpicker js-city-search" data-live-search="true">
-                                        <option>Харьков</option>
-                                        <option>Киев</option>
-                                     </select>
-                                     <button class="btn btn-xs btn-success">сменить</button>
-								</div>
-							</div>
-							<div class="col-md-6"></div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<a class="js-pass-btn change-pass">Изменить пароль</a>
-								</div>
-								<div class="pasword-change__holder js-pass-change">
-									<div class="form-group">
-										<input type="password" required placeholder="Ваш новый пароль" data-validate="pass" class="form-control">
-									</div>
-									<div class="form-group">
-										<input type="password" required placeholder="Повторите пароль" data-validate="pass" class="form-control">
-									</div>
-									<button class="btn btn-xs btn-success js-pass-btn">подтвердить</button>
-								</div>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="cabinet-img">
+                    <img id="photo_img" src="http://chibooka.myapp.com.ua/assets/images/cache/251ad62d31fb2a40425123f106221511.png" alt="">
+                </div>
+            </div>
+            <div class="col-sm-7">
+                <div class="cabinet-form">
+                    <form method="POST" action="http://chibooka.myapp.com.ua/profile/client" accept-charset="UTF-8" class="form js_form" novalidate="novalidate" enctype="multipart/form-data">
+                        <input name="_token" type="hidden" value="eb1136uLzW8tcbVdRnyNZkHypibCxVFYYe4JmMgA">
+                        <div class="alert-success alert">Данные успешно обновлены</div>
+                        <div class="row">
+                            <div class="invisible">
+                                <input type="hidden" name="_token" value="eb1136uLzW8tcbVdRnyNZkHypibCxVFYYe4JmMgA">
+                                <input name="avatar_old" type="hidden">
+                                <input accept="image/*" id="photo" name="avatar" type="file">
+                                <input name="id" type="hidden" value="33">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="first_name" required placeholder="Ваша фамилия" value="" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="last_name" required placeholder="Ваше имя" value="Саша" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" name="email" class="form-control" required value="obram22@gmail.com" data-validate="email" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" id="datetimepicker1" name="birthdate" placeholder="Дата рождения" value="01.01.1970" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="password" name="password" placeholder="Пароль" value="" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="password" name="repeat_password" placeholder="Повторите пароль" value="" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="radio-inline custom-radio">
+                                                <input type="radio" name="sex" value="1"><span class="fake-radio"></span><span>Мужской</span> </label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="radio-inline custom-radio">
+                                                <input type="radio" name="sex" value="2">
+                                                <span class="fake-radio"></span>
+                                                <span>Женский</span> </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group--relative">
+                                    <select name="city_id" class="js_choosen selectpicker js-city-search" data-live-search="true">
+                                        <option>Выберите город</option>
+                                        <option value="5">Брест</option>
+                                        <option value="3" selected="selected">Киев</option>
+                                        <option value="4">Минск</option>
+                                        <option value="6">Москва</option>
+                                        <option value="2">Одесса</option>
+                                        <option value="7">Санкт-Петербург</option>
+                                        <option value="1">Харьков</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-xs btn-success">сохранить</button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group--relative">
+                                    <input type="tel" required="required" placeholder="Телефон" value="+38(099)664-7007" data-validate="phone" class="form-control js_client_phone">
+                                    <button class="btn btn-xs btn-success js_change_phone">изменить</button>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
 </section>
-
 //= footer.html

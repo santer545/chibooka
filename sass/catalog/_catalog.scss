@@ -71,10 +71,13 @@
                 }
             }
         }
+        
     }
     &-hover {
         overflow: hidden;
+        
         &.active {
+            overflow: visible;
             opacity: 1!important;
         }
     }

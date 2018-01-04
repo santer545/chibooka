@@ -419,6 +419,11 @@
         @include tablet {
             text-align: left;
         }
+        li:not(:last-child) {
+            @media screen and (max-width: 350px) {
+                margin-right: 3px!important;
+            }
+        }
     }
     &-img {
         position: relative;
@@ -597,9 +602,13 @@
     overflow: hidden;
     position: relative;
     padding: 10px 25px;
-    margin: -6px -6px 0 0;
+    margin: -6px 0 0 0;
+
     @include tablet {
         margin-right: 0;    
+    }
+    @include mobile {
+        padding: 10px 15px;
     }
 }
 
@@ -643,4 +652,17 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}
+}
+
+.filename-box {
+    p {
+        position: relative;
+        span {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translate(0, -50%);
+            cursor: pointer;
+        }
+    }
 }
