@@ -717,6 +717,10 @@
     margin: 0;
 }
 
+.star {
+    font-size: 1.83rem;
+}
+
 .rating-disabled .rating-input, .rating-disabled .rating-stars {
     cursor: not-allowed;
 }
@@ -728,7 +732,7 @@
 }
 
 .rating-container .empty-stars {
-    color: #aaa;
+    color: #ffb600;
 }
 
 .rating-container .filled-stars {
@@ -736,11 +740,9 @@
     left: 0;
     top: 0;
     margin: auto;
-    color: #fde16d;
+    color: #ffb600;
     white-space: nowrap;
     overflow: hidden;
-    -webkit-text-stroke: 1px #777;
-    text-shadow: 1px 1px #999;
 }
 
 .rating-rtl {
@@ -791,7 +793,7 @@
 }
 
 .rating-xs {
-    font-size: 2em;
+    font-size: 1.83rem;
 }
 
 .rating-xl {
@@ -804,7 +806,7 @@
 .rating-container .clear-rating {
     color: #aaa;
     cursor: not-allowed;
-    display: inline-block;
+    display: none;
     vertical-align: middle;
     font-size: 60%;
 }
@@ -860,4 +862,25 @@
     .rating-container .clear-rating {
         display: none;
     }
+}
+
+/*!
+ * Krajee Font Awesome Theme styling for bootstrap-star-rating.
+ * This file must be loaded after 'star-rating.css'.
+ *
+ * @see http://github.com/kartik-v/bootstrap-star-rating
+ * @author Kartik Visweswaran <kartikv2@gmail.com>
+ */
+.theme-krajee-fa .star {
+    font-size: 1.1em;
+}
+
+.theme-krajee-fa .caption {
+    margin-top: -0.2em;
+}
+
+.rating-xs {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
 }

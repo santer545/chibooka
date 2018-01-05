@@ -383,6 +383,8 @@ function masonry() {
 
         // do not use .grid-sizer in layout
         itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        itemSelector: '.grid-item',
         percentPosition: true,
         gutter: 30
     });
@@ -460,10 +462,9 @@ function getFileName() {
 }
 
 function reviewRating() {
-    $('#rating').rating({
-        displayOnly: true,
-        size: 'xs',
-        emptyStar: '<i class="fa fa-star-o" aria-hidden="true"></i>',
-        filledStar: '<i class="fa fa-star" aria-hidden="true"></i>'
+     $('.kv-ltr-theme-fa-star').rating({
+        hoverOnClear: true,
+        theme: 'krajee-fa',
+        showCaption: false
     });
 }
