@@ -5,7 +5,7 @@ $(document).ready(function() {
 
     animateHeight();
 
-    searchHeight(popup);
+    searchHeight();
 
 
     // date on searchbar
@@ -40,6 +40,8 @@ $(document).ready(function() {
     bron();
 
     getFileName();
+
+    reviewRating();
 
 });
 
@@ -143,24 +145,27 @@ function animateHeight() {
 
 var popup = $('.js-search-result').height();
 
-window.addEventListener("orientationchange", function() {
+/*window.addEventListener("orientationchange", function() {
     var popup_orient = $('.js-search-result').height();
-    searchHeight(1000);
-}, false);
-
-function searchHeight(height) {
     var navLink = $('.js-popup-link');
+
+    console.log(popup_orient);
 
     navLink.click(function() {
         if ($('.js-popup').height() === 0) {
             $('.js-popup').addClass('active');
-            $('.js-popup').height(popup);
-            height = $('.js-popup').height();
-            $('.js-popup').css('opacity', '1');
+            $('.js-popup').height(popup_orient);
         } else {
             $('.js-popup').removeClass('active');
-            $('.js-popup').css('opacity', '0');
+            $('.js-popup').height(0);
         }
+    });
+}, false);*/
+
+function searchHeight() {
+    var navLink = $('.js-popup-link');
+    navLink.click(function() {
+        $('.js-popup').toggleClass('active');
     });
 }
 
@@ -451,5 +456,14 @@ function getFileName() {
 
     $(document).on('click', '.js-fileName-remove', function() {
         $(this).closest('p').remove();
+    });
+}
+
+function reviewRating() {
+    $('#rating').rating({
+        displayOnly: true,
+        size: 'xs',
+        emptyStar: '<i class="fa fa-star-o" aria-hidden="true"></i>',
+        filledStar: '<i class="fa fa-star" aria-hidden="true"></i>'
     });
 }

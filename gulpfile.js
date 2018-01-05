@@ -78,6 +78,7 @@ gulp.task('scripts', function() {
             sourceDir + '/masonry.js',
             sourceDir + '/jquery.dotdotdot.js',
             sourceDir + '/lightbox.js',
+            sourceDir + '/star-rating.js',
             sourceDir + '/main.js'
         ])
 

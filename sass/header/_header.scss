@@ -104,6 +104,12 @@
     }
 }
 
+.logo-main {
+    @include tablet {
+        display: none;
+    }
+}
+
 .lang {
     position: relative;
     display: inline-block;
