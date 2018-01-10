@@ -179,6 +179,10 @@
         display: none;
         padding-left: 0;
         border-radius: 0;
+        @include mini-laptop {
+            right: 0;
+            left: auto;
+        }
         @include tablet {
             padding-top: 0;
         }

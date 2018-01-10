@@ -179,9 +179,6 @@
                 float: none;
                 vertical-align: top;
             }
-            @include mobile {
-                display: block;
-            }
             &:last-child {
                 .search-popup__item {
                     padding-right: 40px;
@@ -258,6 +255,22 @@
             text-align: center;
             padding-right: 0;
             margin: 0 -15px;
+        }
+        &--right {
+            text-align: right;
+            .pagination-arrows-holder {
+                display: inline-block;
+                vertical-align: middle;
+                background-color: transparent;
+                &:after {
+                    color: #fff;
+                }
+                
+            }
+            .pagination-arrow-prev,
+            .pagination-arrow-next {
+                color: #fff;
+            }
         }
     }
     &-icons {
@@ -376,8 +389,8 @@
     }
     .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) .dropdown-menu {
         max-width: none;
-        width: 250px;
-        left: -125px;
+        width: 150px;
+        left: -40px;
         border-radius: 0;
         margin-top: 0;
         border-top: none;

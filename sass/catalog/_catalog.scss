@@ -24,14 +24,15 @@
         width: 52px;
         height: 52px;
         border-radius: 50%;
-        background-color: #e94f1b;
+        background-color: #ccc;
         color: #fff;
         opacity: 0;
         cursor: pointer;
         z-index: 3;
-        transition: opacity 0.3s;
+        transition: background-color 0.3s, opacity 0.3s;
         &.active {
             opacity: 1;
+            background-color: #e94f1b;
         }
         i {
             position: absolute;
@@ -142,6 +143,7 @@
         color: #522a6b;
         padding-bottom: 10px;
         margin-bottom: 7px;
+        word-wrap: break-word;
         &:before {
             content: '';
             position: absolute;
