@@ -95,7 +95,7 @@
             position: absolute;
             font-size: 0.94rem;
             text-transform: none;
-            @include tablet {
+            @include mini-laptop {
                 padding: 10px 5px;  
                 border-radius: 0;
                 text-transform: uppercase;
