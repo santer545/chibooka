@@ -3,6 +3,10 @@
         padding-top: 35px;
         padding-bottom: 40px;
         padding-right: 15%;
+        .checkbox-inline,
+        .radio-inline {
+            padding-left: 0;
+        }
         @include mini-laptop {
             padding-right: 0;
         }
@@ -12,18 +16,18 @@
         }
     }
     &-img {
-    	margin-top: -53%;
+        margin-top: -53%;
         cursor: url(../images/edit.cur), auto;
-    	@include tablet {
-    		margin-top: 0;
-    		padding-top: 35px;
-    	}
+        @include tablet {
+            margin-top: 0;
+            padding-top: 35px;
+        }
         @include mobile {
             text-align: center;
         }
-    	img {
-    		border-radius: 5px;
-    	}
+        img {
+            border-radius: 5px;
+        }
     }
 }
 
@@ -43,4 +47,3 @@
         text-decoration: none;
     }
 }
-
