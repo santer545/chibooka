@@ -416,6 +416,12 @@
             right: 0;
         }
     }
+    &--blog {
+        padding: 35px 0;
+        @include tablet {
+            padding: 15px 0;
+        }
+    }
 }
 
 
