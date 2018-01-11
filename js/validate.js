@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('.js_validate [type="submit"]').on("click", function() {
+    $('.js_validate .form-control').on("blur", function() {
         return validate($(this).parents(".js_validate"));
     });
 });
@@ -47,6 +47,7 @@ function validate(form, paramId) {
     }
     var idValidate = (paramId != undefined) ? '[id="' + paramId + '"]' : '';
     form.find("[required]" + idValidate).each(function() {
+        console.log(idValidate);
         switch ($(this).attr("data-validate")) {
             case undefined:
                 mark($(this), $.trim($(this).val()).length === 0);
