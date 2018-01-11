@@ -174,6 +174,7 @@ function datepicker() {
     $('#datetimepicker1').datetimepicker({
         format: 'MM.DD.YYYY',
         locale: 'ru',
+        sideBySide: true,
         icons: {
             time: 'glyphicon glyphicon-time',
             date: 'glyphicon glyphicon-calendar',
@@ -189,6 +190,7 @@ function datepicker() {
     $('#datetimepicker3').datetimepicker({
         format: 'LT',
         locale: 'ru',
+        sideBySide: true,
         icons: {
             time: 'glyphicon glyphicon-time',
             date: 'glyphicon glyphicon-calendar',

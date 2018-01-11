@@ -37,7 +37,7 @@
     &-item {
         position: relative;
         float: left;
-        width: 20%;
+        width: 16.666%;
         padding: 15px 38px 10px;
         height: 65px;
         background-color: #fff;
@@ -95,6 +95,7 @@
             font-size: 0.94rem;
             text-transform: none;
             @include tablet {
+                padding: 10px 5px;  
                 border-radius: 0;
                 text-transform: uppercase;
                 font-size: 0.83rem;
@@ -575,6 +576,8 @@
     }
 }
 
+
+
 .bootstrap-datetimepicker-widget table td.day {
     cursor: pointer;
     transition: all 0.3s;
@@ -594,7 +597,7 @@
 .bootstrap-datetimepicker-widget table td:hover,
 .bootstrap-datetimepicker-widget table th.active,
 .bootstrap-datetimepicker-widget table th:hover {
-    background-color: #522a6b;
+    /* background-color: #522a6b;
     color: #fff;
     [class^='fa'] {
         color: #fff;
@@ -602,14 +605,12 @@
     .btn-primary {
         background-color: #522a6b;
         border: 1px solid #522a6b;
-    }
+    } */
 }
 
 .datepicker-days {
-    width: 290px;
     padding: 10px 20px;
     .table-condensed {
-        width: 250px;
     }
 }
 
@@ -628,6 +629,32 @@
     }
 }
 
+.bootstrap-datetimepicker-widget table td span {
+    display: inline-block;
+    width: 54px;
+    height: 54px;
+    line-height: 54px;
+    margin: 2px 1.5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.bootstrap-datetimepicker-widget table td [data-action] {
+    padding: 0; 
+}
+
+td[data-action="selectHour"] {
+    width: 50px!important;    
+    height: 50px!important;   
+    line-height: 50px!important;  
+}
+
+.bootstrap-datetimepicker-widget table td [data-action] span {
+    width: 10px;
+    height: 10px;
+    line-height: 10px;
+    color: #522a6b;
+}
 
 // map styles
 .gm-style-iw {
