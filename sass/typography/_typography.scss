@@ -98,6 +98,9 @@
     &--blog {
         padding-top: 42px;
         padding-bottom: 6%;
+        @include tablet {
+            font-size: 2rem;
+        }
     }
 }
 
