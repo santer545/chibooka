@@ -41,10 +41,11 @@
         padding: 15px 38px 10px;
         height: 65px;
         background-color: #fff;
-
+        @include mini-laptop {
+            padding: 15px 10px 10px;
+        }
         @include tablet {
             background-color: #fff;
-            padding: 15px 20px 10px;
         }
         @include mobile {
             width: 100%;
@@ -576,6 +577,9 @@
         right: -12px;
         background: transparent;
         border: none;
+        @include mini-laptop {
+            right: 5px;
+        }
         @include tablet {
             right: 0;
         }
