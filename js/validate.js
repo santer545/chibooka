@@ -1,7 +1,12 @@
 $(document).ready(function() {
-    $('.js_validate .form-control').on("blur", function() {
-        return validate($(this).parents(".js_validate"));
+    $('.js_validate .form-control').each(function(e) {
+        var element_id = $(this).attr('id');
+        console.log(element_id);
+        $(this).on("blur", function() {
+            return validate($(this).parents(".js_validate"), element_id);
+        });
     });
+    
 });
 
 function validate(form, paramId) {
@@ -47,7 +52,7 @@ function validate(form, paramId) {
     }
     var idValidate = (paramId != undefined) ? '[id="' + paramId + '"]' : '';
     form.find("[required]" + idValidate).each(function() {
-        console.log(idValidate);
+        console.log(form.find("[required]" + idValidate));
         switch ($(this).attr("data-validate")) {
             case undefined:
                 mark($(this), $.trim($(this).val()).length === 0);
