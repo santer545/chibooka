@@ -545,6 +545,9 @@
 .bootstrap-select.btn-group .dropdown-toggle .caret {
     right: 18px;
     margin-top: -2px;
+    @include mobile {
+        right: 5px;
+    }
 }
 
 .caret {
