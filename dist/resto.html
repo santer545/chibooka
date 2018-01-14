@@ -1009,26 +1009,34 @@
             <div>
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs modal-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#auth" aria-controls="auth" role="tab" data-toggle="tab">Авторизация</a></li>
-                    <li role="presentation"><a href="#registration" aria-controls="registration" role="tab" data-toggle="tab">Регистрация</a></li>
+                    <li role="presentation" class="">
+                        <a href="#auth" aria-controls="auth" role="tab" data-toggle="tab" aria-expanded="false">Авторизация</a>
+                    </li>
+                    <li role="presentation" class="active">
+                        <a href="#registration" aria-controls="registration" role="tab" data-toggle="tab" aria-expanded="true">Регистрация</a></li>
                 </ul>
                 <!-- Tab panes -->
                 <div class="tab-content modal-tab__content">
-                    <div role="tabpanel" class="tab-pane fade in active" id="auth">
-                        <form action="#" class="form js_validate">
+                    <div role="tabpanel" class="tab-pane fade" id="auth">
+
+                        <form action="http://chibooka.myapp.com.ua/login-client" class="form js_validate js_client_login">
+
+                            <input type="hidden" name="_token" value="KltUpqBPauHu6PEEVayLXIhNTGOFWc7SDSvUivP5">
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="tel" id="phone" class="form-control" required data-validate="phone" placeholder="Телефон">
+                                        <input type="tel" id="auth-phone" name="auth_phone" class="form-control" required="" data-validate="phone" placeholder="Телефон">
                                         <span class="error-text">Введите Ваш телефон</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="password" id="password" class="form-control" required data-validate="pass" placeholder="Пароль">
+                                        <input type="password" id="password" name="password" class="form-control" required="" placeholder="Пароль">
                                         <span class="error-text">Введите пароль</span>
                                     </div>
                                 </div>
+
                                 <div class="col-md-6">
                                     <div class="form-group"><a class="js-forgot forgot-link">Забыл пароль</a></div>
                                 </div>
@@ -1036,48 +1044,32 @@
                             <div class="row js-phone-wrapper phone-wrapper">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input type="tel" name="phone" class="form-control js_phone" id="phone-1" data-mask="+99(999) 999-9999" required data-validate="phone" placeholder="Введите телефон">
+                                        <input type="tel" id="phone" name="phone" class="form-control js_phone" data-mask="+99(999) 999-9999" data-validate="phone" placeholder="Введите телефон">
                                         <span class="error-text"></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <a class="btn btn-success btn-sm js_send_phone">Отправить SMS код</a>
+                                        <a class="btn btn-success btn-sm js_recovery_pass_phone" data-csrf="KltUpqBPauHu6PEEVayLXIhNTGOFWc7SDSvUivP5">Отправить SMS код</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="row js-code code-wrapper">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" id="code" name="phone_code" class="form-control" required placeholder="Введите код">
+                                        <input type="text" name="phone_code" class="form-control" placeholder="Введите код">
                                         <span class="error-text"></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <a class="btn btn-success btn-sm js_send_phone" data-csrf="{{ csrf_token() }}">подтвердить</a>
+                                        <a class="btn btn-success btn-sm js_recovery_pass_code" data-csrf="KltUpqBPauHu6PEEVayLXIhNTGOFWc7SDSvUivP5">подтвердить</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="social-authorize">
-                                        <p>Войти при помощи:</p>
-                                        <ul>
-                                            <li>
-                                                <a href="#">
-                                            <i class="fa fa-google-plus" aria-hidden="true"></i>
-                                        </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                            <i class="fa fa-facebook" aria-hidden="true"></i>
-                                        </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
+                                <div class="col-md-7 js_rc_field"></div>
+                                <div class="col-md-5">
                                     <div class="form-group">
                                         <label for="remember" class="custom-checkbox">
                                             <input type="checkbox" id="remember">
@@ -1095,79 +1087,77 @@
                                 </div>
                             </div>
                         </form>
+
                     </div>
-                    <div role="tabpanel" class="tab-pane fade" id="registration">
-                        <form action="#" class="form js_validate">
+                    <div role="tabpanel" class="tab-pane fade active in" id="registration">
+
+                        <form action="http://chibooka.myapp.com.ua/client-registration" class="form js_validate js_client_registration">
+                            <input type="hidden" name="_token" value="KltUpqBPauHu6PEEVayLXIhNTGOFWc7SDSvUivP5">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" id="name" class="form-control" required placeholder="Ваше имя">
+                                        <input type="text" id="last-name" class="form-control" name="last_name" required="" placeholder="Ваше имя">
                                         <span class="error-text">Введите Ваше имя</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" id="mail" class="form-control" required placeholder="Ваша почта" >
-                                        <span class="error-text">Введите Вашу почту</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="email" id="email" class="form-control" required data-validate="email" placeholder="Email">
+                                        <input type="text" id="email" class="form-control" name="email" required="" placeholder="Email" data-validate="email">
                                         <span class="error-text">Введите Ваш email</span>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="tel" id="tel" class="form-control" required data-validate="phone" placeholder="Телефон">
-                                        <span class="error-text">Введите Ваш телефон</span>
-                                    </div>
-                                </div>
                             </div>
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="password" id="pass-1" class="form-control" required data-validate="pass" placeholder="Пароль">
-                                        <span class="error-text">Введите Ваш пароль</span>
+                                        <input type="tel" name="phone" id="phone-reg" class="form-control js_phone" data-mask="+99(999) 999-9999" required="" data-validate="phone" placeholder="Телефон">
+                                        <span class="error-text">Введите Ваш телефон</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="password" id="pass-repeat" class="form-control" required data-validate="pass1" placeholder="Повторите пароль">
+                                        <a class="btn btn-success btn-sm js_send_phone" data-csrf="KltUpqBPauHu6PEEVayLXIhNTGOFWc7SDSvUivP5">Отправить SMS код</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row js-code code-wrapper">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="phone_code" class="form-control" placeholder="Код подтверждения">
+                                        <span class="error-text">Укажите код подтверждения</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="password" id="pass" name="password" class="form-control" required="" placeholder="Пароль">
+                                        <span class="error-text">Введите пароль</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="password" id="pass-1" name="repeat_password" class="form-control" required="" placeholder="Повторите пароль">
                                         <span class="error-text">Повторите Ваш пароль</span>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="social-authorize">
-                                            <p>Зарегестрироваться при помощи:</p>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">
-                                                                                             <i class="fa fa-google-plus" aria-hidden="true"></i>
-                                                                                        </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                                                             <i class="fa fa-facebook" aria-hidden="true"></i>
-                                                                                        </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
                                     <label for="remember-111" class="custom-checkbox custom-checkbox--inverse">
-                                        <input type="checkbox" id="remember-111">
+                                        <input type="checkbox" name="subscribe" id="remember-111">
                                         <span class="fake-checkbox"></span>
                                         <span>  Подписаться на рассылку о специальных предложениях</span>
                                     </label>
+                                </div>
+                                <div class="col-md-6">
                                     <label for="remember-222" class="custom-checkbox custom-checkbox--inverse">
-                                        <input type="checkbox" id="remember-222">
+                                        <input type="checkbox" name="remember" value="1" id="remember-222">
                                         <span class="fake-checkbox"></span>
                                         <span>Запомнить меня</span>
                                     </label>
@@ -1176,21 +1166,23 @@
                             <div class="row">
                             </div>
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-4 hidden js_submit_area">
                                     <div class="form-group">
                                         <button class="btn btn-success btn-sm" type="submit">создать аккаунт</button>
                                     </div>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-12 js_privacy_policy">
                                     <div class="form-group">
                                         <div class="rools">
-                                            При регистрации аккаунта вы соглашаетесь с <a href="#">условиями 
-                                                пользования сервисом и политикой конфиденциальности</a>
+                                            При регистрации аккаунта вы соглашаетесь с                                            <a href="#">
+                                                условиями
+                                                пользования сервисом и политикой конфиденциальности                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </form>
+
                     </div>
                 </div>
             </div>
