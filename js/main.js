@@ -238,79 +238,151 @@ function inputMasks() {
 }
 
 
+
 function map() {
-    var map1 = $('#map');
-    if (map1.length) {
-        var latlng = new google.maps.LatLng("49.9980554", "36.240871");
+    var markersData = [{
+            lat: 49.9980554, // Широта
+            lng: 36.240871, // Долгота
+            name: "Название 1", // Произвольное название, которое будем выводить в информационном окне
+            address: "Адрес 1" // Адрес, который также будем выводить в информационном окне
+        },
+        {
+            lat: 49.9992222, // Широта
+            lng: 36.2402828, // Долгота
+            name: "Название 2",
+            address: "Адрес 2"
+        },
+        {
+            lat: 49.9993076, // Широта
+            lng: 36.2452667, // Долгота
+            name: "Название 3",
+            address: "Адрес 3"
+        }
+    ];
 
 
-        var popupContent = '<div class="catalog-item map-item"><div class="catalog-img"><img src="images/favorite-1.jpg" alt=""></div><div class="catalog-description"><div class="catalog-heading">44 Favorite Place</div><p><strong>Ресторан.</strong> Средний чек: 112 гривен</p><p><strong>Адрес:</strong> ул. Пушкинская, 44 – <a href="#">от вас 455 метров</a></p><div class="catalog-rating"><ul><li><i class="fa fa-star" aria-hidden="true"></i></li><li><i class="fa fa-star" aria-hidden="true"></i></li><li><i class="fa fa-star" aria-hidden="true"></i></li><li><i class="fa fa-star-o" aria-hidden="true"></i></li><li><i class="fa fa-star-o" aria-hidden="true"></i></li></ul><div class="rating-count"><a href=""><span>30</span> отзывов</a></div></div><div class="catalog-bottom"><div class="catalog-bottom__left"><strong class="catalog-number">21</strong> Столов свободно</div><div class="catalog-bottom__btn"><button class="btn btn-success btn-sm">зачибучить</button></div></div></div></div>';
 
-        var myOptions = {
-            zoom: 17,
-            center: latlng,
-            navigationControlOptions: {
-                style: google.maps.NavigationControlStyle.SMALL
-            },
-            mapTypeId: google.maps.MapTypeId.ROADMAP
+    // Объявляем переменные map и infoWindow за пределами функции initMap,
+    // тем самым делая их глобальными и теперь мы их можем использовать внутри любой функции, а не только внутри initMap, как это было раньше.
+    var map, infoWindow;
+
+    function initMap() {
+        var centerLatLng = new google.maps.LatLng(49.9980554, 36.240871);
+        var mapOptions = {
+            center: centerLatLng,
+            zoom: 17
         };
-
-        var map = new google.maps.Map(document.getElementById("map"), myOptions);
-
-        map.scrollwheel = false;
-
-        map.setOptions({ mapTypeControl: true });
-
-        var image = 'images/marker.png';
+        map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        // Создаем объект информационного окна и помещаем его в переменную infoWindow
+        // Так как у каждого информационного окна свое содержимое, то создаем пустой объект, без передачи ему параметра content
+        infoWindow = new google.maps.InfoWindow();
+        // Отслеживаем клик в любом месте карты
+        google.maps.event.addListener(map, "click", function() {
+            // infoWindow.close - закрываем информационное окно.
+            infoWindow.close();
+        });
+        // Перебираем в цикле все координата хранящиеся в markersData
+        for (var i = 0; i < markersData.length; i++) {
+            var latLng = new google.maps.LatLng(markersData[i].lat, markersData[i].lng);
+            var name = markersData[i].name;
+            var address = markersData[i].address;
+            // Добавляем маркер с информационным окном
+            addMarker(latLng, name, address);
+        }
+    }
+    google.maps.event.addDomListener(window, "load", initMap);
+    // Функция добавления маркера с информационным окном
+    function addMarker(latLng, name, address) {
         var marker = new google.maps.Marker({
-            position: latlng,
+            position: latLng,
             map: map,
-            icon: image
+            title: name
         });
-
-
-        var infowindow = new google.maps.InfoWindow({
-            content: popupContent
-        });
-        /*infowindow.open(map, marker);*/
-        marker.addListener('click', function() {
-            infowindow.open(map, marker);
-        });
-
-        google.maps.event.addListener(infowindow, 'domready', function() {
-            // Reference to the DIV which receives the contents of the infowindow using jQuery
-            var iwOuter = $('.gm-style-iw');
-            $(iwOuter).next().remove();
-
-            /* The DIV we want to change is above the .gm-style-iw DIV.
-             * So, we use jQuery and create a iwBackground variable,
-             * and took advantage of the existing reference to .gm-style-iw for the previous DIV with .prev().
-             */
-            var iwBackground = iwOuter.prev();
-
-            iwOuter.parent().parent().css({ left: '300px', top: '300px' });
-
-            // Remove the background shadow DIV
-            iwBackground.children(':nth-child(2)').css({ 'display': 'none' });
-
-            // Remove the white background DIV
-            iwBackground.children(':nth-child(4)').css({ 'display': 'none' });
-
-            // Moves the shadow of the arrow 76px to the left margin 
-            iwBackground.children(':nth-child(1)').attr('style', function(i, s) { return s + 'left: 0px !important;' });
-
-            // Moves the arrow 76px to the left margin 
-            iwBackground.children(':nth-child(3)').find('div').children().remove();
-
-            // Changes the desired color for the tail outline.
-            // The outline of the tail is composed of two descendants of div which contains the tail.
-            // The .find('div').children() method refers to all the div which are direct descendants of the previous div. 
-            iwBackground.children(':nth-child(3)').find('div').children().remove();
-
-
+        // Отслеживаем клик по нашему маркеру
+        google.maps.event.addListener(marker, "click", function() {
+            // contentString - это переменная в которой хранится содержимое информационного окна.
+            var contentString = '<div class="catalog-item map-item"><div class="catalog-img"><img src="images/favorite-1.jpg" alt=""></div><div class="catalog-description"><div class="catalog-heading">44 Favorite Place</div><p><strong>Ресторан.</strong> Средний чек: 112 гривен</p><p><strong>Адрес:</strong> ул. Пушкинская, 44 – <a href="#">от вас 455 метров</a></p><div class="catalog-rating"><ul><li><i class="fa fa-star" aria-hidden="true"></i></li><li><i class="fa fa-star" aria-hidden="true"></i></li><li><i class="fa fa-star" aria-hidden="true"></i></li><li><i class="fa fa-star-o" aria-hidden="true"></i></li><li><i class="fa fa-star-o" aria-hidden="true"></i></li></ul><div class="rating-count"><a href=""><span>30</span> отзывов</a></div></div><div class="catalog-bottom"><div class="catalog-bottom__left"><strong class="catalog-number">21</strong> Столов свободно</div><div class="catalog-bottom__btn"><button class="btn btn-success btn-sm">зачибучить</button></div></div></div></div>';
+            // Меняем содержимое информационного окна
+            infoWindow.setContent(contentString);
+            // Показываем информационное окно
+            infoWindow.open(map, marker);
         });
     }
 }
+
+// function map() {
+//     var map1 = $('#map');
+//     if (map1.length) {
+//         var latlng = new google.maps.LatLng("49.9980554", "36.240871");
+
+
+//         var popupContent = '<div class="catalog-item map-item"><div class="catalog-img"><img src="images/favorite-1.jpg" alt=""></div><div class="catalog-description"><div class="catalog-heading">44 Favorite Place</div><p><strong>Ресторан.</strong> Средний чек: 112 гривен</p><p><strong>Адрес:</strong> ул. Пушкинская, 44 – <a href="#">от вас 455 метров</a></p><div class="catalog-rating"><ul><li><i class="fa fa-star" aria-hidden="true"></i></li><li><i class="fa fa-star" aria-hidden="true"></i></li><li><i class="fa fa-star" aria-hidden="true"></i></li><li><i class="fa fa-star-o" aria-hidden="true"></i></li><li><i class="fa fa-star-o" aria-hidden="true"></i></li></ul><div class="rating-count"><a href=""><span>30</span> отзывов</a></div></div><div class="catalog-bottom"><div class="catalog-bottom__left"><strong class="catalog-number">21</strong> Столов свободно</div><div class="catalog-bottom__btn"><button class="btn btn-success btn-sm">зачибучить</button></div></div></div></div>';
+
+//         var myOptions = {
+//             zoom: 17,
+//             center: latlng,
+//             navigationControlOptions: {
+//                 style: google.maps.NavigationControlStyle.SMALL
+//             },
+//             mapTypeId: google.maps.MapTypeId.ROADMAP
+//         };
+
+//         var map = new google.maps.Map(document.getElementById("map"), myOptions);
+
+//         map.scrollwheel = false;
+
+//         map.setOptions({ mapTypeControl: true });
+
+//         var image = 'images/marker.png';
+//         var marker = new google.maps.Marker({
+//             position: latlng,
+//             map: map,
+//             icon: image
+//         });
+
+
+//         var infowindow = new google.maps.InfoWindow({
+//             content: popupContent
+//         });
+//         /*infowindow.open(map, marker);*/
+//         marker.addListener('click', function() {
+//             infowindow.open(map, marker);
+//         });
+
+//         google.maps.event.addListener(infowindow, 'domready', function() {
+//             // Reference to the DIV which receives the contents of the infowindow using jQuery
+//             var iwOuter = $('.gm-style-iw');
+//             $(iwOuter).next().remove();
+
+//             /* The DIV we want to change is above the .gm-style-iw DIV.
+//              * So, we use jQuery and create a iwBackground variable,
+//              * and took advantage of the existing reference to .gm-style-iw for the previous DIV with .prev().
+//              */
+//             var iwBackground = iwOuter.prev();
+
+//             iwOuter.parent().parent().css({ left: '300px', top: '300px' });
+
+//             // Remove the background shadow DIV
+//             iwBackground.children(':nth-child(2)').css({ 'display': 'none' });
+
+//             // Remove the white background DIV
+//             iwBackground.children(':nth-child(4)').css({ 'display': 'none' });
+
+//             // Moves the shadow of the arrow 76px to the left margin 
+//             iwBackground.children(':nth-child(1)').attr('style', function(i, s) { return s + 'left: 0px !important;' });
+
+//             // Moves the arrow 76px to the left margin 
+//             iwBackground.children(':nth-child(3)').find('div').children().remove();
+
+//             // Changes the desired color for the tail outline.
+//             // The outline of the tail is composed of two descendants of div which contains the tail.
+//             // The .find('div').children() method refers to all the div which are direct descendants of the previous div. 
+//             iwBackground.children(':nth-child(3)').find('div').children().remove();
+
+
+//         });
+//     }
+// }
 
 
 function navbarDropdown() {
