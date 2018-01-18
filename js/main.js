@@ -43,6 +43,8 @@ $(document).ready(function() {
 
     reviewRating();
 
+    getCode();
+
 });
 
 function mobileNavbar() {
@@ -104,7 +106,7 @@ function animateHeight() {
     navLink3.click(function() {
         if (nav3.height() === 0) {
             autoHeightAnimate(nav3, animateTime3);
-            $(nav).css('opacity', '1');
+            $(nav3).css('opacity', '1');
         } else {
             nav3.stop().animate({ height: '0', opacity: '0' }, animateTime);
         }
@@ -227,6 +229,12 @@ function inputMasks() {
 
     //phone 
     $('input[type=tel]').mask("+99(999)999-9999");
+
+    var val = $("#reg_code").mask("+99(999)999-9999", {
+        completed: function() {
+            $('.js_send_phone').removeAttr('disabled');
+        }
+    });
 }
 
 
@@ -480,9 +488,23 @@ function getFileName() {
 }
 
 function reviewRating() {
-     $('.kv-ltr-theme-fa-star').rating({
+    $('.kv-ltr-theme-fa-star').rating({
         hoverOnClear: true,
         theme: 'krajee-fa',
         showCaption: false
+    });
+}
+
+function getCode() {
+    var element = $('#reg_code').closest('div');
+    var value = $('#reg_code').val().length;
+    element.change(function() {
+        console.log(value);
+        var flag = $(element).hasClass('has-success');
+        if (flag) {
+            $('.js_send_phone').removeAttr('disabled');
+        } else {
+            $('.js_send_phone').attr('disabled', 'disabled');
+        }
     });
 }

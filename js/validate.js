@@ -1,10 +1,10 @@
 $(document).ready(function() {
     $('.js_validate .form-control').each(function(e) {
         var element_id = $(this).attr('id');
-        console.log(element_id);
         $(this).on("blur", function() {
             return validate($(this).parents(".js_validate"), element_id);
         });
+        
     });
     
 });
@@ -168,7 +168,7 @@ function validate(form, paramId) {
     if (e == 0) {
         return true;
     } else {
-        form.find(".has-error").eq(0).children().focus();
+        form.find(".has-error").eq(0).children();
         return false;
     }
 }

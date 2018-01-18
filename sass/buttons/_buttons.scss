@@ -18,7 +18,14 @@ a.btn {
 	&:focus,
 	&:active,
 	&:focus:active,
-	&:active:hover {
+	&:active:hover,
+	&[disabled] {
+		background-color: #e13900;
+		border: 1px solid #e94f1b;
+		color: #fff;
+		outline: none;
+	}
+	&[disabled]:hover {
 		background-color: #e13900;
 		border: 1px solid #e94f1b;
 		color: #fff;
