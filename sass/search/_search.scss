@@ -43,6 +43,7 @@
         width: 16.666%;
         padding: 15px 25px 10px;
         height: 65px;
+        
         background-color: #fff;
         @include mini-laptop {
             padding: 15px 10px 10px;
@@ -165,6 +166,16 @@
         border-radius: 0 0 5px 5px;
         margin: -1px 15px 0;
         transition: opacity 0.5s;
+        text-align: right;  
+        > .row {
+            font-size: 0;   
+            [class^="col-"] {
+                float: none;    
+                display: inline-block;  
+                vertical-align: top;    
+            }
+        }
+        
         &.active {
             opacity: 1;
             z-index: 11;
@@ -197,6 +208,7 @@
 
         &__item {
             padding-top: 30px;
+            text-align: left;   
             @include tablet {
                 padding-left: 20px;
             }
@@ -248,6 +260,9 @@
 
 .sort {
     position: relative;
+    @include tablet {
+        min-height: 50px;   
+    }
     &:after {
         content: '';
         position: absolute;
@@ -369,10 +384,35 @@
 }
 
 .autocomplete-suggestions {
-    margin-top: 10px;
+    min-width: 250px;
+    margin: 20px 0 0 0;
+}
+
+.autocomplete-suggestion {
+    padding: 6px 10px!important;
 }
 
 .sort-toolbar {
+    > p {
+        margin: 0;  
+        padding: 21px 5px;
+        display: inline-block;  
+        vertical-align: middle;  
+        font-size: 1.2rem;  
+        color: #fff;
+        
+        @include mini-laptop {
+            font-size: 1rem;    
+        }
+        @include tablet {
+            padding: 25px 5px;  
+            font-size: 1.2rem;  
+        }
+
+        span {
+            font-weight: bold;  
+        }
+    }
     .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
         display: inline-block;
         width: 36%;
@@ -459,6 +499,11 @@
             padding: 15px 0;
         }
     }
+    &--inverse {
+        @include mobile {
+            margin-top: 45px;   
+        }
+    }
 }
 
 
@@ -517,6 +562,9 @@
     border: 1px solid #522a6b;
     border-radius: 5px;
     padding: 10px 20px;
+    @include mini-laptop {
+        padding: 10px;  
+    }
     &:hover,
     &:focus,
     &:active,
@@ -575,6 +623,11 @@
 .bootstrap-select.btn-group .dropdown-toggle .caret {
     right: 18px;
     margin-top: -2px;
+
+    @include mini-laptop {
+        right: 7px; 
+        margin-top: -3px;   
+    }
     @include mobile {
         right: 5px;
     }
@@ -639,6 +692,22 @@
     [class^='fa'] {
         transition: all 0.3s;
     }
+    
+}
+
+.bootstrap-datetimepicker-widget table td {
+    &.disabled {
+        color: #ccc;
+        background-color: #fff;
+        opacity: 0.6;   
+        cursor: default;
+    }
+
+    &.active {
+        font-weight: bold;  
+        background-color: #522a6b;
+        color: #fff;
+    }
 }
 
 
@@ -688,6 +757,12 @@
     border-radius: 4px;
 }
 
+.bootstrap-datetimepicker-widget table td.minute {
+    width: 54px;
+    height: 54px;
+    line-height: 54px;
+}
+
 .bootstrap-datetimepicker-widget table td [data-action] {
     padding: 0; 
 }
@@ -724,6 +799,12 @@ td[data-action="selectHour"] {
         border-style: solid;
         border-width: 10px 40px 10px 0;
         border-color: transparent #fff transparent transparent;
+    }
+
+    .catalog-absolute {
+        position: static;
+        border: none;   
+        padding: 0; 
     }
 }
 

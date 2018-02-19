@@ -5,7 +5,9 @@
         border: none;
         border-radius: 4px;
         background-color: transparent;
-        
+        &--visible {
+            overflow: visible;
+        }
     }
     &-dialog {
         width: 750px;
@@ -26,6 +28,14 @@
             position: static;
             margin: 50px auto 0;
             transform: translate(0, 0)!important;
+        }
+
+        &--relative {
+            position: relative; 
+            left: auto; 
+            top: auto;  
+            transform: translate(0, 0)!important;
+            margin-top: 40px;   
         }
     }
     &-tabs {
@@ -89,17 +99,33 @@
     @include tablet {
         padding: 30px 7%;
     }
+    &--inverse {
+        padding: 20px 13%;
+        @include tablet {
+            padding: 30px 7%;
+        }
+    }
 }
 
 .modal-title {
     position: relative;
     font-size: 2.07rem;
     margin-bottom: 8px;
+    .heading-icon {
+
+    }
     [class^="fa"] {
         position: absolute;
         top: 9px;
         left: -44px;
         font-size: 2.07rem;
+        @include tablet {
+            font-size: 1.5rem;  
+            left: -25px;    
+        }
+        @include mobile {
+            display: none;  
+        }
     }
     &--relative {
         position: relative;
@@ -258,7 +284,6 @@
         }
     }
     &-btn {
-        padding-bottom: 50px;
         @include mobile {
             text-align: center;
             padding-bottom: 0;
@@ -270,6 +295,9 @@
                 margin-right: 0;
                 margin-bottom: 10px;
             }
+        }
+        &--inverse {
+            padding-bottom: 30px;   
         }
     }
 }

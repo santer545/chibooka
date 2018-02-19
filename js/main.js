@@ -177,6 +177,7 @@ function datepicker() {
         format: 'MM.DD.YYYY',
         locale: 'ru',
         sideBySide: true,
+        stepping: 15,
         icons: {
             time: 'glyphicon glyphicon-time',
             date: 'glyphicon glyphicon-calendar',
@@ -193,6 +194,7 @@ function datepicker() {
         format: 'LT',
         locale: 'ru',
         sideBySide: true,
+        stepping: 15,
         icons: {
             time: 'glyphicon glyphicon-time',
             date: 'glyphicon glyphicon-calendar',
@@ -209,6 +211,7 @@ function datepicker() {
         format: 'LT',
         locale: 'ru',
         sideBySide: true,
+        stepping: 15,
         icons: {
             time: 'glyphicon glyphicon-time',
             date: 'glyphicon glyphicon-calendar',

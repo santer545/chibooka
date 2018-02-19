@@ -148,6 +148,7 @@
         border-radius: 5px 0 0 5px;
         background-color: #e94f1b;
         transition: padding 0.3s;
+        cursor: pointer;
         @include mini-laptop {
             padding: 15px 20px;
             width: 14%;

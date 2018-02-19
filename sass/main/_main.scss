@@ -55,6 +55,10 @@
     }
 }
 
+.swiper-slide-duplicate-active {
+    display: none;  
+}
+
 .slider-btn {
     @include mobile {
         padding-top: 20px;
