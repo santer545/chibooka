@@ -135,6 +135,14 @@
 		top: 19px;
 		height: 16px;
 		color: #522a6b;
+
+		@include tablet {
+			top: 21px;
+			left: 48%;
+		}
+		@include mobile {
+			top: 10px;
+		}
 	}
 }
 
@@ -170,6 +178,10 @@
 				padding-left: 43px;
 				margin-bottom: 20px;
 				line-height: 20px;
+
+				@include tablet {
+					padding-left: 20px;
+				}
 				&:before {
 					content: '';
 					position: absolute;
@@ -179,6 +191,11 @@
 					height: 8px;
 					border-radius: 8px;
 					background-color: #522a6b;
+
+					@include tablet {
+						width: 8px;
+						height: 8px;
+					}
 				}
 			}
 		}

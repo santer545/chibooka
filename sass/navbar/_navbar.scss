@@ -150,10 +150,11 @@
         transition: padding 0.3s;
         cursor: pointer;
         @include mini-laptop {
-            padding: 15px 20px;
+            padding: 17px 10px;
             width: 14%;
             float: left;
             display: block;
+            font-size: 0.8rem;
         }
         @include tablet {
             float: right;
@@ -164,6 +165,9 @@
         span {
             margin-right: 10px;
             font-weight: 600;
+            @include mini-laptop {
+                margin-right: 4px;
+            }
         }
     }
 }

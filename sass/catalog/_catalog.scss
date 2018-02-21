@@ -131,6 +131,7 @@
         }
         p {
             margin: 0 0 8px;
+            word-wrap: break-word;
         }
         a {
             color: #e94f1b;
@@ -234,6 +235,7 @@
     }
 
     &-rating {
+        padding-top: 150px;
         padding-bottom: 22px;
         @include tablet {
             text-align: center;

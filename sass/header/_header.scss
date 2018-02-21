@@ -11,7 +11,7 @@
         height: 46px;
     }
     @include tablet {
-        height: 46px;
+        height: 43px;
         background-color: #522a6b;
     }
     &-right {
@@ -185,6 +185,10 @@
         }
         @include tablet {
             padding-top: 0;
+        }
+        @include mobile {
+            left: 0;
+            right: auto;
         }
         li {
             display: block;
